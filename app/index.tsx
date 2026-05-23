@@ -1,5 +1,7 @@
 import React from "react";
-import { View, Text, SafeAreaView, StatusBar, StyleSheet } from "react-native";
+import { View, Text, SafeAreaView, StatusBar, StyleSheet, TouchableOpacity } from "react-native";
+import { useRouter } from "expo-router";
+import { Volume2 } from "lucide-react-native";
 import { useProgressStore } from "../stores/useProgressStore";
 import { useUserStore } from "../stores/useUserStore";
 import StreakBadge from "../components/StreakBadge";
@@ -8,6 +10,8 @@ import PathView from "../components/PathView";
 import { colors } from "../constants/colors";
 
 export default function HomeScreen() {
+  const router = useRouter();
+  
   // Read state from Zustand stores
   const userName = useUserStore((state) => state.name);
   const totalXP = useProgressStore((state) => state.totalXP);
@@ -22,7 +26,16 @@ export default function HomeScreen() {
       
       {/* 1. Sticky Header - Branding & Stats */}
       <View style={styles.header}>
-        <Text style={styles.logo}>Bolo</Text>
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
+          <Text style={styles.logo}>Bolo</Text>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            onPress={() => router.push("/audio-test")}
+            style={styles.debugAudioBtn}
+          >
+            <Volume2 size={16} color="#2dd4bf" />
+          </TouchableOpacity>
+        </View>
         <View style={styles.statsContainer}>
           <StreakBadge count={streak} />
           <View style={{ width: 10 }} />
@@ -66,6 +79,14 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: "900",
     letterSpacing: 1.5,
+  },
+  debugAudioBtn: {
+    marginLeft: 10,
+    padding: 6,
+    backgroundColor: "#0f766e",
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: "rgba(255, 255, 255, 0.1)",
   },
   statsContainer: {
     flexDirection: "row",
