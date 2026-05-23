@@ -1,0 +1,388 @@
+{
+  "id": "C07",
+  "number": 7,
+  "title": "Colors",
+  "subtitle": "Invariant vs inflecting colors and describing a vibrant bazaar",
+  "goal": "Differentiate gender-changing inflecting colors from invariant ones to describe things in a colorful bazaar.",
+  "estimatedMinutes": 14,
+  "culturalNote": "Colors ending in '-a' (like 'neela' - blue, 'peela' - yellow) change their endings to '-i' for feminine nouns (neeli, peeli). Invariant colors like 'laal' (red) remain the same regardless of noun gender.",
+  "passingScore": 0.75,
+  "rewards": {
+    "xp": 50,
+    "completionMessage": "Aap ne baab 7 pura kiya! You completed Chapter 7. You have successfully mastered Colors!"
+  },
+  "phrases": [
+    {
+      "id": "C07-001",
+      "chapterId": "C07",
+      "levelId": "L7-1",
+      "order": 1,
+      "urdu": "لال",
+      "roman": "Laal",
+      "english": "Red",
+      "englishContextual": "Red",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C07/C07-001-normal.m4a",
+        "slow": "audio/C07/C07-001-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Colors learning block."
+    },
+    {
+      "id": "C07-002",
+      "chapterId": "C07",
+      "levelId": "L7-1",
+      "order": 2,
+      "urdu": "سفید",
+      "roman": "Safed",
+      "english": "White",
+      "englishContextual": "White",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C07/C07-002-normal.m4a",
+        "slow": "audio/C07/C07-002-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Colors learning block."
+    },
+    {
+      "id": "C07-003",
+      "chapterId": "C07",
+      "levelId": "L7-2",
+      "order": 3,
+      "urdu": "نیلا",
+      "roman": "Neela",
+      "english": "Blue (masculine)",
+      "englishContextual": "Blue (masculine)",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C07/C07-003-normal.m4a",
+        "slow": "audio/C07/C07-003-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Colors learning block."
+    },
+    {
+      "id": "C07-004",
+      "chapterId": "C07",
+      "levelId": "L7-2",
+      "order": 4,
+      "urdu": "نیلی",
+      "roman": "Neeli",
+      "english": "Blue (feminine)",
+      "englishContextual": "Blue (feminine)",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C07/C07-004-normal.m4a",
+        "slow": "audio/C07/C07-004-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Colors learning block."
+    },
+    {
+      "id": "C07-005",
+      "chapterId": "C07",
+      "levelId": "L7-2",
+      "order": 5,
+      "urdu": "ہرا",
+      "roman": "Hara",
+      "english": "Green (masculine)",
+      "englishContextual": "Green (masculine)",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C07/C07-005-normal.m4a",
+        "slow": "audio/C07/C07-005-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Colors learning block."
+    }
+  ],
+  "levels": [
+    {
+      "id": "L7-1",
+      "chapterId": "C07",
+      "number": 1,
+      "title": "Practice Block 1",
+      "subtitle": "Mastering phrases for Colors",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [
+        "C07-001",
+        "C07-002"
+      ],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [
+        {
+          "id": "L7-1-E1-C07-001",
+          "type": "INTRODUCE",
+          "phraseId": "C07-001"
+        },
+        {
+          "id": "L7-1-E2-C07-001",
+          "type": "L_TO_M",
+          "phraseId": "C07-001",
+          "distractorPhraseIds": [
+            "C07-003",
+            "C07-004"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L7-1-E3-C07-001",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C07-001"
+        },
+        {
+          "id": "L7-1-E4-C07-001",
+          "type": "SPEAK",
+          "phraseId": "C07-001",
+          "prompt": "Say \"Red\" in Urdu.",
+          "hint": "Laal"
+        },
+        {
+          "id": "L7-1-E1-C07-002",
+          "type": "INTRODUCE",
+          "phraseId": "C07-002"
+        },
+        {
+          "id": "L7-1-E2-C07-002",
+          "type": "L_TO_M",
+          "phraseId": "C07-002",
+          "distractorPhraseIds": [
+            "C07-003",
+            "C07-004"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L7-1-E3-C07-002",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C07-002"
+        },
+        {
+          "id": "L7-1-E4-C07-002",
+          "type": "SPEAK",
+          "phraseId": "C07-002",
+          "prompt": "Say \"White\" in Urdu.",
+          "hint": "Safed"
+        }
+      ],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L7-2",
+      "chapterId": "C07",
+      "number": 2,
+      "title": "Practice Block 2",
+      "subtitle": "Mastering phrases for Colors",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [
+        "C07-003",
+        "C07-004",
+        "C07-005"
+      ],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [
+        {
+          "id": "L7-2-E1-C07-003",
+          "type": "INTRODUCE",
+          "phraseId": "C07-003"
+        },
+        {
+          "id": "L7-2-E2-C07-003",
+          "type": "L_TO_M",
+          "phraseId": "C07-003",
+          "distractorPhraseIds": [
+            "C07-001",
+            "C07-002"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L7-2-E3-C07-003",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C07-003"
+        },
+        {
+          "id": "L7-2-E4-C07-003",
+          "type": "SPEAK",
+          "phraseId": "C07-003",
+          "prompt": "Say \"Blue (masculine)\" in Urdu.",
+          "hint": "Neela"
+        },
+        {
+          "id": "L7-2-E1-C07-004",
+          "type": "INTRODUCE",
+          "phraseId": "C07-004"
+        },
+        {
+          "id": "L7-2-E2-C07-004",
+          "type": "L_TO_M",
+          "phraseId": "C07-004",
+          "distractorPhraseIds": [
+            "C07-001",
+            "C07-002"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L7-2-E3-C07-004",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C07-004"
+        },
+        {
+          "id": "L7-2-E4-C07-004",
+          "type": "SPEAK",
+          "phraseId": "C07-004",
+          "prompt": "Say \"Blue (feminine)\" in Urdu.",
+          "hint": "Neeli"
+        },
+        {
+          "id": "L7-2-E1-C07-005",
+          "type": "INTRODUCE",
+          "phraseId": "C07-005"
+        },
+        {
+          "id": "L7-2-E2-C07-005",
+          "type": "L_TO_M",
+          "phraseId": "C07-005",
+          "distractorPhraseIds": [
+            "C07-001",
+            "C07-002"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L7-2-E3-C07-005",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C07-005"
+        },
+        {
+          "id": "L7-2-E4-C07-005",
+          "type": "SPEAK",
+          "phraseId": "C07-005",
+          "prompt": "Say \"Green (masculine)\" in Urdu.",
+          "hint": "Hara"
+        }
+      ],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L7-3",
+      "chapterId": "C07",
+      "number": 3,
+      "title": "Practice Block 3",
+      "subtitle": "Mastering phrases for Colors",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L7-4",
+      "chapterId": "C07",
+      "number": 4,
+      "title": "Practice Block 4",
+      "subtitle": "Mastering phrases for Colors",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L7-5",
+      "chapterId": "C07",
+      "number": 5,
+      "title": "BOSS: Colors Capstone",
+      "subtitle": "Invariant vs inflecting colors and describing a vibrant bazaar",
+      "type": "BOSS",
+      "estimatedMinutes": 4,
+      "newPhraseIds": [],
+      "reviewPhraseIds": [
+        "C07-001",
+        "C07-002",
+        "C07-003",
+        "C07-004",
+        "C07-005"
+      ],
+      "scenarioIntro": "You are at a textile shop in Liberty Market Lahore, selecting fabrics of different colors.",
+      "passingScore": 0.75,
+      "exerciseSequence": [
+        {
+          "id": "L7-5-E1",
+          "type": "SCENARIO_TURN",
+          "speakerLine": {
+            "audio": "audio/C07/scenario/turn1.m4a",
+            "urdu": "یہ نیلا کپڑا کیسا ہے؟",
+            "roman": "Yeh neela kapra kaisa hai?",
+            "english": "How is this blue cloth?"
+          },
+          "expectedPhraseId": "C07-001",
+          "prompt": "Say you prefer: Red.",
+          "hint": null
+        },
+        {
+          "id": "L7-5-E2",
+          "type": "SCENARIO_TURN",
+          "speakerLine": {
+            "audio": "audio/C07/scenario/turn2.m4a",
+            "urdu": "ٹھیک ہے، اور یہ قمیض؟",
+            "roman": "Theek hai, aur yeh qameez? (feminine qameez)",
+            "english": "Okay, and this shirt?"
+          },
+          "expectedPhraseId": "C07-004",
+          "prompt": "Describe it using the feminine form: Blue (Neeli).",
+          "hint": null
+        }
+      ],
+      "rewards": {
+        "xp": 25,
+        "chapterCompleteBonus": 50
+      }
+    }
+  ]
+}

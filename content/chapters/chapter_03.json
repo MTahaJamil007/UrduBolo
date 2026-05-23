@@ -1,0 +1,388 @@
+{
+  "id": "C03",
+  "number": 3,
+  "title": "Pronouns & \"To Be\"",
+  "subtitle": "Foundation pronouns and the respectful ji haan register",
+  "goal": "Master basic personal pronouns and to-be verbs along with formal polite agreement markers.",
+  "estimatedMinutes": 14,
+  "culturalNote": "Adding 'ji' before yes (ji haan) or no (ji nahin) instantly elevates your politeness. In Pakistani culture, using respect markers is a sign of good upbringing (tehzeeb).",
+  "passingScore": 0.75,
+  "rewards": {
+    "xp": 50,
+    "completionMessage": "Aap ne baab 3 pura kiya! You completed Chapter 3. You have successfully mastered Pronouns & \"To Be\"!"
+  },
+  "phrases": [
+    {
+      "id": "C03-001",
+      "chapterId": "C03",
+      "levelId": "L3-1",
+      "order": 1,
+      "urdu": "میں ہوں",
+      "roman": "Main hoon",
+      "english": "I am",
+      "englishContextual": "I am",
+      "gender": "neutral",
+      "category": "greeting",
+      "audio": {
+        "normal": "audio/C03/C03-001-normal.m4a",
+        "slow": "audio/C03/C03-001-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Pronouns & \"To Be\" learning block."
+    },
+    {
+      "id": "C03-002",
+      "chapterId": "C03",
+      "levelId": "L3-1",
+      "order": 2,
+      "urdu": "ہم ہیں",
+      "roman": "Hum hain",
+      "english": "We are",
+      "englishContextual": "We are",
+      "gender": "neutral",
+      "category": "greeting",
+      "audio": {
+        "normal": "audio/C03/C03-002-normal.m4a",
+        "slow": "audio/C03/C03-002-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Pronouns & \"To Be\" learning block."
+    },
+    {
+      "id": "C03-003",
+      "chapterId": "C03",
+      "levelId": "L3-1",
+      "order": 3,
+      "urdu": "آپ ہیں",
+      "roman": "Aap hain",
+      "english": "You are (respectful/formal)",
+      "englishContextual": "You are (respectful/formal)",
+      "gender": "neutral",
+      "category": "greeting",
+      "audio": {
+        "normal": "audio/C03/C03-003-normal.m4a",
+        "slow": "audio/C03/C03-003-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Pronouns & \"To Be\" learning block."
+    },
+    {
+      "id": "C03-004",
+      "chapterId": "C03",
+      "levelId": "L3-4",
+      "order": 4,
+      "urdu": "جی ہاں",
+      "roman": "Ji haan",
+      "english": "Yes (polite)",
+      "englishContextual": "Yes (polite)",
+      "gender": "neutral",
+      "category": "courtesy",
+      "audio": {
+        "normal": "audio/C03/C03-004-normal.m4a",
+        "slow": "audio/C03/C03-004-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Pronouns & \"To Be\" learning block."
+    },
+    {
+      "id": "C03-005",
+      "chapterId": "C03",
+      "levelId": "L3-4",
+      "order": 5,
+      "urdu": "جی نہیں",
+      "roman": "Ji nahin",
+      "english": "No (polite)",
+      "englishContextual": "No (polite)",
+      "gender": "neutral",
+      "category": "courtesy",
+      "audio": {
+        "normal": "audio/C03/C03-005-normal.m4a",
+        "slow": "audio/C03/C03-005-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Pronouns & \"To Be\" learning block."
+    }
+  ],
+  "levels": [
+    {
+      "id": "L3-1",
+      "chapterId": "C03",
+      "number": 1,
+      "title": "Practice Block 1",
+      "subtitle": "Mastering phrases for Pronouns & \"To Be\"",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [
+        "C03-001",
+        "C03-002",
+        "C03-003"
+      ],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [
+        {
+          "id": "L3-1-E1-C03-001",
+          "type": "INTRODUCE",
+          "phraseId": "C03-001"
+        },
+        {
+          "id": "L3-1-E2-C03-001",
+          "type": "L_TO_M",
+          "phraseId": "C03-001",
+          "distractorPhraseIds": [
+            "C03-004",
+            "C03-005"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L3-1-E3-C03-001",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C03-001"
+        },
+        {
+          "id": "L3-1-E4-C03-001",
+          "type": "SPEAK",
+          "phraseId": "C03-001",
+          "prompt": "Say \"I am\" in Urdu.",
+          "hint": "Main hoon"
+        },
+        {
+          "id": "L3-1-E1-C03-002",
+          "type": "INTRODUCE",
+          "phraseId": "C03-002"
+        },
+        {
+          "id": "L3-1-E2-C03-002",
+          "type": "L_TO_M",
+          "phraseId": "C03-002",
+          "distractorPhraseIds": [
+            "C03-004",
+            "C03-005"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L3-1-E3-C03-002",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C03-002"
+        },
+        {
+          "id": "L3-1-E4-C03-002",
+          "type": "SPEAK",
+          "phraseId": "C03-002",
+          "prompt": "Say \"We are\" in Urdu.",
+          "hint": "Hum hain"
+        },
+        {
+          "id": "L3-1-E1-C03-003",
+          "type": "INTRODUCE",
+          "phraseId": "C03-003"
+        },
+        {
+          "id": "L3-1-E2-C03-003",
+          "type": "L_TO_M",
+          "phraseId": "C03-003",
+          "distractorPhraseIds": [
+            "C03-004",
+            "C03-005"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L3-1-E3-C03-003",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C03-003"
+        },
+        {
+          "id": "L3-1-E4-C03-003",
+          "type": "SPEAK",
+          "phraseId": "C03-003",
+          "prompt": "Say \"You are (respectful/formal)\" in Urdu.",
+          "hint": "Aap hain"
+        }
+      ],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L3-2",
+      "chapterId": "C03",
+      "number": 2,
+      "title": "Practice Block 2",
+      "subtitle": "Mastering phrases for Pronouns & \"To Be\"",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L3-3",
+      "chapterId": "C03",
+      "number": 3,
+      "title": "Practice Block 3",
+      "subtitle": "Mastering phrases for Pronouns & \"To Be\"",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L3-4",
+      "chapterId": "C03",
+      "number": 4,
+      "title": "Practice Block 4",
+      "subtitle": "Mastering phrases for Pronouns & \"To Be\"",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [
+        "C03-004",
+        "C03-005"
+      ],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [
+        {
+          "id": "L3-4-E1-C03-004",
+          "type": "INTRODUCE",
+          "phraseId": "C03-004"
+        },
+        {
+          "id": "L3-4-E2-C03-004",
+          "type": "L_TO_M",
+          "phraseId": "C03-004",
+          "distractorPhraseIds": [
+            "C03-001",
+            "C03-002"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L3-4-E3-C03-004",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C03-004"
+        },
+        {
+          "id": "L3-4-E4-C03-004",
+          "type": "SPEAK",
+          "phraseId": "C03-004",
+          "prompt": "Say \"Yes (polite)\" in Urdu.",
+          "hint": "Ji haan"
+        },
+        {
+          "id": "L3-4-E1-C03-005",
+          "type": "INTRODUCE",
+          "phraseId": "C03-005"
+        },
+        {
+          "id": "L3-4-E2-C03-005",
+          "type": "L_TO_M",
+          "phraseId": "C03-005",
+          "distractorPhraseIds": [
+            "C03-001",
+            "C03-002"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L3-4-E3-C03-005",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C03-005"
+        },
+        {
+          "id": "L3-4-E4-C03-005",
+          "type": "SPEAK",
+          "phraseId": "C03-005",
+          "prompt": "Say \"No (polite)\" in Urdu.",
+          "hint": "Ji nahin"
+        }
+      ],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L3-5",
+      "chapterId": "C03",
+      "number": 5,
+      "title": "BOSS: Pronouns & \"To Be\" Capstone",
+      "subtitle": "Foundation pronouns and the respectful ji haan register",
+      "type": "BOSS",
+      "estimatedMinutes": 4,
+      "newPhraseIds": [],
+      "reviewPhraseIds": [
+        "C03-001",
+        "C03-002",
+        "C03-003",
+        "C03-004",
+        "C03-005"
+      ],
+      "scenarioIntro": "You are introduced to an elder uncle at a gathering. He asks if you speak Urdu and if you are a student. Respond politely using respect registers.",
+      "passingScore": 0.75,
+      "exerciseSequence": [
+        {
+          "id": "L3-5-E1",
+          "type": "SCENARIO_TURN",
+          "speakerLine": {
+            "audio": "audio/C03/scenario/turn1.m4a",
+            "urdu": "کیا آپ امریکہ سے ہیں؟",
+            "roman": "Kya aap America se hain?",
+            "english": "Are you from America?"
+          },
+          "expectedPhraseId": "C03-004",
+          "prompt": "Answer politely: Yes.",
+          "hint": null
+        },
+        {
+          "id": "L3-5-E2",
+          "type": "SCENARIO_TURN",
+          "speakerLine": {
+            "audio": "audio/C03/scenario/turn2.m4a",
+            "urdu": "بہت اچھے! کیا آپ طالب علم ہیں؟",
+            "roman": "Bohat ache! Kya aap talib-e-ilm hain?",
+            "english": "Great! Are you a student?"
+          },
+          "expectedPhraseId": "C03-004",
+          "prompt": "Answer politely: Yes.",
+          "hint": null
+        }
+      ],
+      "rewards": {
+        "xp": 25,
+        "chapterCompleteBonus": 50
+      }
+    }
+  ]
+}

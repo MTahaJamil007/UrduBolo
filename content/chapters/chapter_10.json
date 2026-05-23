@@ -1,0 +1,366 @@
+{
+  "id": "C10",
+  "number": 10,
+  "title": "Capstone: Meeting the In-Laws",
+  "subtitle": "High stakes conversation roleplay at their Karachi home",
+  "goal": "Combine all greetings, introductions, family descriptions, respect markers, and vocabulary in a complex capstone roleplay.",
+  "estimatedMinutes": 14,
+  "culturalNote": "Congratulations on reaching the Stage 1 Capstone! Meeting in-laws in Karachi or Lahore is the ultimate test of spoken Urdu. Greet respectfully, express gratitude, and converse beautifully.",
+  "passingScore": 0.75,
+  "rewards": {
+    "xp": 50,
+    "completionMessage": "Aap ne baab 10 pura kiya! You completed Chapter 10. You have successfully mastered Capstone: Meeting the In-Laws!"
+  },
+  "phrases": [
+    {
+      "id": "C10-001",
+      "chapterId": "C10",
+      "levelId": "L10-1",
+      "order": 1,
+      "urdu": "السلام علیکم",
+      "roman": "Assalam alaikum",
+      "english": "Hello",
+      "englishContextual": "Hello",
+      "gender": "neutral",
+      "category": "greeting",
+      "audio": {
+        "normal": "audio/C10/C10-001-normal.m4a",
+        "slow": "audio/C10/C10-001-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Capstone: Meeting the In-Laws learning block."
+    },
+    {
+      "id": "C10-002",
+      "chapterId": "C10",
+      "levelId": "L10-2",
+      "order": 2,
+      "urdu": "میں ٹھیک ہوں، شکریہ",
+      "roman": "Main theek hoon, shukriya",
+      "english": "I am fine, thank you",
+      "englishContextual": "I am fine, thank you",
+      "gender": "neutral",
+      "category": "greeting",
+      "audio": {
+        "normal": "audio/C10/C10-002-normal.m4a",
+        "slow": "audio/C10/C10-002-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Capstone: Meeting the In-Laws learning block."
+    },
+    {
+      "id": "C10-003",
+      "chapterId": "C10",
+      "levelId": "L10-3",
+      "order": 3,
+      "urdu": "آپ کا شکریہ",
+      "roman": "Aap ka shukriya",
+      "english": "Thank you respectfully",
+      "englishContextual": "Thank you respectfully",
+      "gender": "neutral",
+      "category": "courtesy",
+      "audio": {
+        "normal": "audio/C10/C10-003-normal.m4a",
+        "slow": "audio/C10/C10-003-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Capstone: Meeting the In-Laws learning block."
+    },
+    {
+      "id": "C10-004",
+      "chapterId": "C10",
+      "levelId": "L10-4",
+      "order": 4,
+      "urdu": "اللہ حافظ",
+      "roman": "Allah hafiz",
+      "english": "Goodbye",
+      "englishContextual": "Goodbye",
+      "gender": "neutral",
+      "category": "farewell",
+      "audio": {
+        "normal": "audio/C10/C10-004-normal.m4a",
+        "slow": "audio/C10/C10-004-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Capstone: Meeting the In-Laws learning block."
+    }
+  ],
+  "levels": [
+    {
+      "id": "L10-1",
+      "chapterId": "C10",
+      "number": 1,
+      "title": "Practice Block 1",
+      "subtitle": "Mastering phrases for Capstone: Meeting the In-Laws",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [
+        "C10-001"
+      ],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [
+        {
+          "id": "L10-1-E1-C10-001",
+          "type": "INTRODUCE",
+          "phraseId": "C10-001"
+        },
+        {
+          "id": "L10-1-E2-C10-001",
+          "type": "L_TO_M",
+          "phraseId": "C10-001",
+          "distractorPhraseIds": [
+            "C10-002",
+            "C10-003"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L10-1-E3-C10-001",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C10-001"
+        },
+        {
+          "id": "L10-1-E4-C10-001",
+          "type": "SPEAK",
+          "phraseId": "C10-001",
+          "prompt": "Say \"Hello\" in Urdu.",
+          "hint": "Assalam alaikum"
+        }
+      ],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L10-2",
+      "chapterId": "C10",
+      "number": 2,
+      "title": "Practice Block 2",
+      "subtitle": "Mastering phrases for Capstone: Meeting the In-Laws",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [
+        "C10-002"
+      ],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [
+        {
+          "id": "L10-2-E1-C10-002",
+          "type": "INTRODUCE",
+          "phraseId": "C10-002"
+        },
+        {
+          "id": "L10-2-E2-C10-002",
+          "type": "L_TO_M",
+          "phraseId": "C10-002",
+          "distractorPhraseIds": [
+            "C10-001",
+            "C10-003"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L10-2-E3-C10-002",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C10-002"
+        },
+        {
+          "id": "L10-2-E4-C10-002",
+          "type": "SPEAK",
+          "phraseId": "C10-002",
+          "prompt": "Say \"I am fine, thank you\" in Urdu.",
+          "hint": "Main theek hoon, shukriya"
+        }
+      ],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L10-3",
+      "chapterId": "C10",
+      "number": 3,
+      "title": "Practice Block 3",
+      "subtitle": "Mastering phrases for Capstone: Meeting the In-Laws",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [
+        "C10-003"
+      ],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [
+        {
+          "id": "L10-3-E1-C10-003",
+          "type": "INTRODUCE",
+          "phraseId": "C10-003"
+        },
+        {
+          "id": "L10-3-E2-C10-003",
+          "type": "L_TO_M",
+          "phraseId": "C10-003",
+          "distractorPhraseIds": [
+            "C10-001",
+            "C10-002"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L10-3-E3-C10-003",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C10-003"
+        },
+        {
+          "id": "L10-3-E4-C10-003",
+          "type": "SPEAK",
+          "phraseId": "C10-003",
+          "prompt": "Say \"Thank you respectfully\" in Urdu.",
+          "hint": "Aap ka shukriya"
+        }
+      ],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L10-4",
+      "chapterId": "C10",
+      "number": 4,
+      "title": "Practice Block 4",
+      "subtitle": "Mastering phrases for Capstone: Meeting the In-Laws",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [
+        "C10-004"
+      ],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [
+        {
+          "id": "L10-4-E1-C10-004",
+          "type": "INTRODUCE",
+          "phraseId": "C10-004"
+        },
+        {
+          "id": "L10-4-E2-C10-004",
+          "type": "L_TO_M",
+          "phraseId": "C10-004",
+          "distractorPhraseIds": [
+            "C10-001",
+            "C10-002"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L10-4-E3-C10-004",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C10-004"
+        },
+        {
+          "id": "L10-4-E4-C10-004",
+          "type": "SPEAK",
+          "phraseId": "C10-004",
+          "prompt": "Say \"Goodbye\" in Urdu.",
+          "hint": "Allah hafiz"
+        }
+      ],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L10-5",
+      "chapterId": "C10",
+      "number": 5,
+      "title": "BOSS: Capstone: Meeting the In-Laws Capstone",
+      "subtitle": "High stakes conversation roleplay at their Karachi home",
+      "type": "BOSS",
+      "estimatedMinutes": 4,
+      "newPhraseIds": [],
+      "reviewPhraseIds": [
+        "C10-001",
+        "C10-002",
+        "C10-003",
+        "C10-004"
+      ],
+      "scenarioIntro": "This is it — the Karachi home of your future in-laws. Enter, greet your host respectfully, respond to how you are, thank them warmly for the tea, and say a respectful goodbye.",
+      "passingScore": 0.75,
+      "exerciseSequence": [
+        {
+          "id": "L10-5-E1",
+          "type": "SCENARIO_TURN",
+          "speakerLine": {
+            "audio": "audio/C10/scenario/turn1.m4a",
+            "urdu": "السلام علیکم! خوش آمدید، تشریف لائیں۔",
+            "roman": "Assalam alaikum! Khush aamdeed, tashreef layein.",
+            "english": "Hello! Welcome, please come in."
+          },
+          "expectedPhraseId": "C10-001",
+          "prompt": "Greet them respectfully in return.",
+          "hint": null
+        },
+        {
+          "id": "L10-5-E2",
+          "type": "SCENARIO_TURN",
+          "speakerLine": {
+            "audio": "audio/C10/scenario/turn2.m4a",
+            "urdu": "آپ کیسی ہیں؟ سفر کیسا رہا؟",
+            "roman": "Aap kaisi hain? Safar kaisa raha?",
+            "english": "How are you? How was the travel?"
+          },
+          "expectedPhraseId": "C10-002",
+          "prompt": "Say you are fine, thank you.",
+          "hint": null
+        },
+        {
+          "id": "L10-5-E3",
+          "type": "SCENARIO_TURN",
+          "speakerLine": {
+            "audio": "audio/C10/scenario/turn3.m4a",
+            "urdu": "یہ گرم چائے آپ کے لیے۔",
+            "roman": "Yeh garam chai aap ke liye.",
+            "english": "This hot tea is for you."
+          },
+          "expectedPhraseId": "C10-003",
+          "prompt": "Express your respectful gratitude.",
+          "hint": null
+        },
+        {
+          "id": "L10-5-E4",
+          "type": "SCENARIO_TURN",
+          "speakerLine": {
+            "audio": "audio/C10/scenario/turn4.m4a",
+            "urdu": "بہت خوشی ہوئی آپ سے مل کر۔ اللہ حافظ۔",
+            "roman": "Bohat khushi hui aap se mil kar. Allah hafiz.",
+            "english": "Pleased to meet you. Goodbye."
+          },
+          "expectedPhraseId": "C10-004",
+          "prompt": "Say goodbye respectfully.",
+          "hint": null
+        }
+      ],
+      "rewards": {
+        "xp": 25,
+        "chapterCompleteBonus": 50
+      }
+    }
+  ]
+}

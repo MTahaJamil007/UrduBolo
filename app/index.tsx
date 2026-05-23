@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, SafeAreaView, StatusBar, StyleSheet, TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
-import { Volume2 } from "lucide-react-native";
+import { Volume2, Settings } from "lucide-react-native";
 import { useProgressStore } from "../stores/useProgressStore";
 import { useUserStore } from "../stores/useUserStore";
 import StreakBadge from "../components/StreakBadge";
@@ -34,6 +34,13 @@ export default function HomeScreen() {
             style={styles.debugAudioBtn}
           >
             <Volume2 size={16} color="#2dd4bf" />
+          </TouchableOpacity>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            onPress={() => router.push("/settings")}
+            style={styles.settingsBtn}
+          >
+            <Settings size={16} color="#2dd4bf" />
           </TouchableOpacity>
         </View>
         <View style={styles.statsContainer}>
@@ -82,6 +89,14 @@ const styles = StyleSheet.create({
   },
   debugAudioBtn: {
     marginLeft: 10,
+    padding: 6,
+    backgroundColor: "#0f766e",
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: "rgba(255, 255, 255, 0.1)",
+  },
+  settingsBtn: {
+    marginLeft: 8,
     padding: 6,
     backgroundColor: "#0f766e",
     borderRadius: 12,

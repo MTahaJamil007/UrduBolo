@@ -1,0 +1,442 @@
+{
+  "id": "C04",
+  "number": 4,
+  "title": "Family (Core)",
+  "subtitle": "Immediate family, mera vs meri, and showing respect to elders",
+  "goal": "Learn immediate family terms, apply masculine vs feminine possessive pronouns correctly, and plural respect markers.",
+  "estimatedMinutes": 14,
+  "culturalNote": "Parents and elders always take the plural verb 'hain' (e.g. Yeh meri ammi hain) as a fundamental mark of respect. Never use the singular 'hai' for parents or older family members.",
+  "passingScore": 0.75,
+  "rewards": {
+    "xp": 50,
+    "completionMessage": "Aap ne baab 4 pura kiya! You completed Chapter 4. You have successfully mastered Family (Core)!"
+  },
+  "phrases": [
+    {
+      "id": "C04-001",
+      "chapterId": "C04",
+      "levelId": "L4-1",
+      "order": 1,
+      "urdu": "امی",
+      "roman": "Ammi",
+      "english": "Mother",
+      "englishContextual": "Mother",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C04/C04-001-normal.m4a",
+        "slow": "audio/C04/C04-001-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Family (Core) learning block."
+    },
+    {
+      "id": "C04-002",
+      "chapterId": "C04",
+      "levelId": "L4-1",
+      "order": 2,
+      "urdu": "ابو",
+      "roman": "Abbu",
+      "english": "Father",
+      "englishContextual": "Father",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C04/C04-002-normal.m4a",
+        "slow": "audio/C04/C04-002-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Family (Core) learning block."
+    },
+    {
+      "id": "C04-003",
+      "chapterId": "C04",
+      "levelId": "L4-2",
+      "order": 3,
+      "urdu": "بھائی",
+      "roman": "Bhai",
+      "english": "Brother",
+      "englishContextual": "Brother",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C04/C04-003-normal.m4a",
+        "slow": "audio/C04/C04-003-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Family (Core) learning block."
+    },
+    {
+      "id": "C04-004",
+      "chapterId": "C04",
+      "levelId": "L4-2",
+      "order": 4,
+      "urdu": "بہن",
+      "roman": "Behen",
+      "english": "Sister",
+      "englishContextual": "Sister",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C04/C04-004-normal.m4a",
+        "slow": "audio/C04/C04-004-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Family (Core) learning block."
+    },
+    {
+      "id": "C04-005",
+      "chapterId": "C04",
+      "levelId": "L4-3",
+      "order": 5,
+      "urdu": "میرا بھائی",
+      "roman": "Mera bhai",
+      "english": "My brother",
+      "englishContextual": "My brother",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C04/C04-005-normal.m4a",
+        "slow": "audio/C04/C04-005-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Family (Core) learning block."
+    },
+    {
+      "id": "C04-006",
+      "chapterId": "C04",
+      "levelId": "L4-3",
+      "order": 6,
+      "urdu": "میری بہن",
+      "roman": "Meri behen",
+      "english": "My sister",
+      "englishContextual": "My sister",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C04/C04-006-normal.m4a",
+        "slow": "audio/C04/C04-006-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Family (Core) learning block."
+    }
+  ],
+  "levels": [
+    {
+      "id": "L4-1",
+      "chapterId": "C04",
+      "number": 1,
+      "title": "Practice Block 1",
+      "subtitle": "Mastering phrases for Family (Core)",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [
+        "C04-001",
+        "C04-002"
+      ],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [
+        {
+          "id": "L4-1-E1-C04-001",
+          "type": "INTRODUCE",
+          "phraseId": "C04-001"
+        },
+        {
+          "id": "L4-1-E2-C04-001",
+          "type": "L_TO_M",
+          "phraseId": "C04-001",
+          "distractorPhraseIds": [
+            "C04-003",
+            "C04-004"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L4-1-E3-C04-001",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C04-001"
+        },
+        {
+          "id": "L4-1-E4-C04-001",
+          "type": "SPEAK",
+          "phraseId": "C04-001",
+          "prompt": "Say \"Mother\" in Urdu.",
+          "hint": "Ammi"
+        },
+        {
+          "id": "L4-1-E1-C04-002",
+          "type": "INTRODUCE",
+          "phraseId": "C04-002"
+        },
+        {
+          "id": "L4-1-E2-C04-002",
+          "type": "L_TO_M",
+          "phraseId": "C04-002",
+          "distractorPhraseIds": [
+            "C04-003",
+            "C04-004"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L4-1-E3-C04-002",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C04-002"
+        },
+        {
+          "id": "L4-1-E4-C04-002",
+          "type": "SPEAK",
+          "phraseId": "C04-002",
+          "prompt": "Say \"Father\" in Urdu.",
+          "hint": "Abbu"
+        }
+      ],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L4-2",
+      "chapterId": "C04",
+      "number": 2,
+      "title": "Practice Block 2",
+      "subtitle": "Mastering phrases for Family (Core)",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [
+        "C04-003",
+        "C04-004"
+      ],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [
+        {
+          "id": "L4-2-E1-C04-003",
+          "type": "INTRODUCE",
+          "phraseId": "C04-003"
+        },
+        {
+          "id": "L4-2-E2-C04-003",
+          "type": "L_TO_M",
+          "phraseId": "C04-003",
+          "distractorPhraseIds": [
+            "C04-001",
+            "C04-002"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L4-2-E3-C04-003",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C04-003"
+        },
+        {
+          "id": "L4-2-E4-C04-003",
+          "type": "SPEAK",
+          "phraseId": "C04-003",
+          "prompt": "Say \"Brother\" in Urdu.",
+          "hint": "Bhai"
+        },
+        {
+          "id": "L4-2-E1-C04-004",
+          "type": "INTRODUCE",
+          "phraseId": "C04-004"
+        },
+        {
+          "id": "L4-2-E2-C04-004",
+          "type": "L_TO_M",
+          "phraseId": "C04-004",
+          "distractorPhraseIds": [
+            "C04-001",
+            "C04-002"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L4-2-E3-C04-004",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C04-004"
+        },
+        {
+          "id": "L4-2-E4-C04-004",
+          "type": "SPEAK",
+          "phraseId": "C04-004",
+          "prompt": "Say \"Sister\" in Urdu.",
+          "hint": "Behen"
+        }
+      ],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L4-3",
+      "chapterId": "C04",
+      "number": 3,
+      "title": "Practice Block 3",
+      "subtitle": "Mastering phrases for Family (Core)",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [
+        "C04-005",
+        "C04-006"
+      ],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [
+        {
+          "id": "L4-3-E1-C04-005",
+          "type": "INTRODUCE",
+          "phraseId": "C04-005"
+        },
+        {
+          "id": "L4-3-E2-C04-005",
+          "type": "L_TO_M",
+          "phraseId": "C04-005",
+          "distractorPhraseIds": [
+            "C04-001",
+            "C04-002"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L4-3-E3-C04-005",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C04-005"
+        },
+        {
+          "id": "L4-3-E4-C04-005",
+          "type": "SPEAK",
+          "phraseId": "C04-005",
+          "prompt": "Say \"My brother\" in Urdu.",
+          "hint": "Mera bhai"
+        },
+        {
+          "id": "L4-3-E1-C04-006",
+          "type": "INTRODUCE",
+          "phraseId": "C04-006"
+        },
+        {
+          "id": "L4-3-E2-C04-006",
+          "type": "L_TO_M",
+          "phraseId": "C04-006",
+          "distractorPhraseIds": [
+            "C04-001",
+            "C04-002"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L4-3-E3-C04-006",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C04-006"
+        },
+        {
+          "id": "L4-3-E4-C04-006",
+          "type": "SPEAK",
+          "phraseId": "C04-006",
+          "prompt": "Say \"My sister\" in Urdu.",
+          "hint": "Meri behen"
+        }
+      ],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L4-4",
+      "chapterId": "C04",
+      "number": 4,
+      "title": "Practice Block 4",
+      "subtitle": "Mastering phrases for Family (Core)",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L4-5",
+      "chapterId": "C04",
+      "number": 5,
+      "title": "BOSS: Family (Core) Capstone",
+      "subtitle": "Immediate family, mera vs meri, and showing respect to elders",
+      "type": "BOSS",
+      "estimatedMinutes": 4,
+      "newPhraseIds": [],
+      "reviewPhraseIds": [
+        "C04-001",
+        "C04-002",
+        "C04-003",
+        "C04-004",
+        "C04-005",
+        "C04-006"
+      ],
+      "scenarioIntro": "Your parents have arrived at a dinner, and you are introducing your siblings and mother to your teacher out loud.",
+      "passingScore": 0.75,
+      "exerciseSequence": [
+        {
+          "id": "L4-5-E1",
+          "type": "SCENARIO_TURN",
+          "speakerLine": {
+            "audio": "audio/C04/scenario/turn1.m4a",
+            "urdu": "یہ کون ہے؟",
+            "roman": "Yeh kaun hai?",
+            "english": "Who is this? (pointing to brother)"
+          },
+          "expectedPhraseId": "C04-005",
+          "prompt": "Introduce him: My brother.",
+          "hint": null
+        },
+        {
+          "id": "L4-5-E2",
+          "type": "SCENARIO_TURN",
+          "speakerLine": {
+            "audio": "audio/C04/scenario/turn2.m4a",
+            "urdu": "اور یہ کون ہیں؟",
+            "roman": "Aur yeh kaun hain?",
+            "english": "And who is this? (pointing to mother)"
+          },
+          "expectedPhraseId": "C04-001",
+          "prompt": "Introduce her: Mother.",
+          "hint": null
+        }
+      ],
+      "rewards": {
+        "xp": 25,
+        "chapterCompleteBonus": 50
+      }
+    }
+  ]
+}

@@ -13,13 +13,16 @@ import { ArrowLeft, Volume2, ShieldAlert } from "lucide-react-native";
 import { useChapterStore } from "../../stores/useChapterStore";
 import { useProgressStore } from "../../stores/useProgressStore";
 import { loadChapter, getPhraseById } from "../../services/contentService";
-import { stopAllAudio } from "../../services/audioService";
+import { stopAllAudio, playAudio } from "../../services/audioService";
 import ProgressBar from "../../components/ProgressBar";
 import IntroduceExercise from "../../components/exercises/IntroduceExercise";
 import ListenToMeaningExercise from "../../components/exercises/ListenToMeaningExercise";
 import SpeakExercise from "../../components/exercises/SpeakExercise";
 import ListenRepeatExercise from "../../components/exercises/ListenRepeatExercise";
+import ScenarioTurnExercise from "../../components/exercises/ScenarioTurnExercise";
+import ListenToImageExercise from "../../components/exercises/ListenToImageExercise";
 import { colors } from "../../constants/colors";
+import { Crown } from "lucide-react-native";
 
 export default function LevelPlayerScreen() {
   const router = useRouter();
@@ -42,6 +45,8 @@ export default function LevelPlayerScreen() {
 
   const completeLevel = useProgressStore((state) => state.completeLevel);
 
+  const [showSplash, setShowSplash] = useState(false);
+
   useEffect(() => {
     async function initLevel() {
       setLoading(true);
@@ -55,6 +60,12 @@ export default function LevelPlayerScreen() {
         const level = chapter.levels.find((l) => l.id === levelId);
         if (level) {
           setActive(chapter, level);
+          
+          // Trigger BOSS Intro Splash Screen
+          if (level.type === "BOSS") {
+            setShowSplash(true);
+            playAudio("", "Pehla baab, boss challenge! Chapter Boss Challenge, prepare yourself.", "normal");
+          }
         } else {
           Alert.alert("Error", `Level ${levelId} not found in Chapter ${chapterId}`);
           router.back();
@@ -134,6 +145,15 @@ export default function LevelPlayerScreen() {
           />
         );
       }
+      case "L_TO_I": {
+        return (
+          <ListenToImageExercise
+            exercise={exercise as any}
+            parentChapter={activeChapter}
+            onNext={(passed, score, attempts) => handleExerciseComplete(passed, score, attempts)}
+          />
+        );
+      }
       case "LISTEN_REPEAT": {
         return (
           <ListenRepeatExercise
@@ -152,22 +172,29 @@ export default function LevelPlayerScreen() {
           />
         );
       }
+      case "SCENARIO_TURN": {
+        return (
+          <ScenarioTurnExercise
+            exercise={exercise as any}
+            parentChapter={activeChapter}
+            sceneIndex={currentExerciseIndex}
+            totalScenes={exercises.length}
+            onNext={(passed, score, attempts) => handleExerciseComplete(passed, score, attempts)}
+          />
+        );
+      }
       default: {
-        // Fallback placeholder card for exercise types not yet implemented in Sprint 4
-        // (LISTEN_REPEAT, SPEAK, SCENARIO_TURN - built in Sprints 5 & 6)
-        const phrase = "phraseId" in exercise ? getPhraseById(activeChapter, exercise.phraseId) : null;
-        
         return (
           <View style={styles.placeholderCard}>
             <ShieldAlert size={48} color={colors.warning} style={{ marginBottom: 16 }} />
             <Text style={styles.placeholderType}>
-              Exercise type: {exercise.type}
+              Exercise type: {(exercise as any).type}
             </Text>
             <Text style={styles.placeholderTitle}>
-              {phrase ? `Practice: "${phrase.roman}"` : "Interactive Practice"}
+              Interactive Practice
             </Text>
             <Text style={styles.placeholderDesc}>
-              This exercise type ({exercise.type}) is configured for Level {activeLevel.number} and will be fully unlocked in subsequent sprints.
+              This exercise type ({(exercise as any).type}) will be fully unlocked in subsequent sprints.
             </Text>
 
             <TouchableOpacity
@@ -175,7 +202,7 @@ export default function LevelPlayerScreen() {
               onPress={() => handleExerciseComplete(true, 1.0, 1)}
               style={styles.simulateBtn}
             >
-              <Text style={styles.simulateBtnText}>Simulate Correct Speaking</Text>
+              <Text style={styles.simulateBtnText}>Simulate Progress</Text>
             </TouchableOpacity>
           </View>
         );
@@ -183,8 +210,10 @@ export default function LevelPlayerScreen() {
     }
   };
 
+  const isBoss = activeLevel.type === "BOSS";
+
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeAreaView style={[styles.safeArea, isBoss && styles.bossSafeArea]}>
       {/* 1. Header controls & progress tracking */}
       <View style={styles.header}>
         <TouchableOpacity
@@ -201,18 +230,53 @@ export default function LevelPlayerScreen() {
         
         <View style={styles.progressWrapper}>
           <ProgressBar progress={progress} />
-          <Text style={styles.progressText}>
-            {currentExerciseIndex + 1} of {exercises.length}
+          <Text style={[styles.progressText, isBoss && styles.bossProgressText]}>
+            {isBoss ? "👑 BOSS SCENARIO" : `Level ${activeLevel.number}`} • {currentExerciseIndex + 1} of {exercises.length}
           </Text>
         </View>
 
-        <View style={{ width: 44 }} />
+        {isBoss ? (
+          <View style={styles.bossHeaderIcon}>
+            <Crown size={20} color="#f59e0b" fill="#f59e0b" />
+          </View>
+        ) : (
+          <View style={{ width: 44 }} />
+        )}
       </View>
 
       {/* 2. Primary Exercise view port */}
       <View style={styles.content}>
         {renderActiveExercise()}
       </View>
+
+      {/* 3. BOSS Intro Splash Overlay Screen */}
+      {showSplash && (
+        <View style={styles.splashOverlay}>
+          <View style={styles.splashHeader}>
+            <Crown size={64} color="#f59e0b" fill="#f59e0b" />
+            <Text style={styles.splashBadge}>Stage 1 Boss</Text>
+          </View>
+          <Text style={styles.splashTitle}>{activeLevel.title}</Text>
+          <Text style={styles.splashSubtitle}>Chapter {activeChapter.number}: {activeChapter.title}</Text>
+          
+          <View style={styles.splashDivider} />
+          
+          <Text style={styles.splashDesc}>
+            {activeLevel.scenarioIntro}
+          </Text>
+
+          <TouchableOpacity
+            activeOpacity={0.8}
+            onPress={() => {
+              setShowSplash(false);
+              stopAllAudio();
+            }}
+            style={styles.startBtn}
+          >
+            <Text style={styles.startBtnText}>Start Conversation</Text>
+          </TouchableOpacity>
+        </View>
+      )}
     </SafeAreaView>
   );
 }
@@ -221,6 +285,9 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     backgroundColor: colors.background,
+  },
+  bossSafeArea: {
+    backgroundColor: "#051b19", // Darker dark-teal overlay for boss levels
   },
   loadingContainer: {
     flex: 1,
@@ -243,6 +310,16 @@ const styles = StyleSheet.create({
     backgroundColor: "#0d5c56",
     borderRadius: 22,
   },
+  bossHeaderIcon: {
+    width: 44,
+    height: 44,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#d97706",
+    borderRadius: 22,
+    borderWidth: 1,
+    borderColor: "#f59e0b",
+  },
   progressWrapper: {
     flex: 1,
     marginHorizontal: 16,
@@ -256,6 +333,9 @@ const styles = StyleSheet.create({
     marginTop: 4,
     letterSpacing: 0.5,
     opacity: 0.8,
+  },
+  bossProgressText: {
+    color: "#fdba74", // Amber text for boss levels progress indicator
   },
   content: {
     flex: 1,
@@ -314,5 +394,87 @@ const styles = StyleSheet.create({
     color: "#ffffff",
     fontSize: 15,
     fontWeight: "800",
+  },
+  splashOverlay: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    backgroundColor: "#051b19",
+    zIndex: 1000,
+    padding: 32,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  splashHeader: {
+    alignItems: "center",
+    marginBottom: 20,
+  },
+  splashBadge: {
+    backgroundColor: "#d97706",
+    color: "#ffffff",
+    fontSize: 10,
+    fontWeight: "900",
+    textTransform: "uppercase",
+    letterSpacing: 1.0,
+    paddingHorizontal: 12,
+    paddingVertical: 4,
+    borderRadius: 8,
+    marginTop: 8,
+    borderWidth: 1,
+    borderColor: "#f59e0b",
+  },
+  splashTitle: {
+    color: "#ffffff",
+    fontSize: 32,
+    fontWeight: "900",
+    textAlign: "center",
+    marginBottom: 4,
+    letterSpacing: 0.5,
+  },
+  splashSubtitle: {
+    color: "#f59e0b",
+    fontSize: 16,
+    fontWeight: "700",
+    textAlign: "center",
+  },
+  splashDivider: {
+    width: 60,
+    height: 4,
+    backgroundColor: "#d97706",
+    borderRadius: 2,
+    marginVertical: 24,
+  },
+  splashDesc: {
+    color: "#a7f3d0",
+    fontSize: 15,
+    lineHeight: 24,
+    fontWeight: "500",
+    textAlign: "center",
+    maxWidth: 290,
+    marginBottom: 40,
+    opacity: 0.95,
+  },
+  startBtn: {
+    backgroundColor: colors.accent,
+    height: 56,
+    borderRadius: 28,
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+    shadowColor: "#d97706",
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.3,
+    shadowRadius: 10,
+    elevation: 6,
+    borderWidth: 1,
+    borderColor: "#f59e0b",
+  },
+  startBtnText: {
+    color: "#ffffff",
+    fontSize: 16,
+    fontWeight: "800",
+    letterSpacing: 0.5,
   },
 });

@@ -7,8 +7,15 @@ import manifestData from "../content/manifest.json";
 // Since React Native does not support dynamic import paths at runtime, we list them explicitly.
 const CHAPTER_FILES: Record<string, any> = {
   C01: require("../content/chapters/chapter_01.json"),
-  // Chapters C02-C10 are currently scaffolded in the manifest as placeholders.
-  // Their require entries will be added here in Sprint 7 as the files are authored.
+  C02: require("../content/chapters/chapter_02.json"),
+  C03: require("../content/chapters/chapter_03.json"),
+  C04: require("../content/chapters/chapter_04.json"),
+  C05: require("../content/chapters/chapter_05.json"),
+  C06: require("../content/chapters/chapter_06.json"),
+  C07: require("../content/chapters/chapter_07.json"),
+  C08: require("../content/chapters/chapter_08.json"),
+  C09: require("../content/chapters/chapter_09.json"),
+  C10: require("../content/chapters/chapter_10.json"),
 };
 
 /**

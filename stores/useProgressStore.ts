@@ -1,11 +1,12 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { UserProgress, ChapterProgress, LevelProgress } from "../types/progress";
+import { UserProgress, ChapterProgress, LevelProgress, UserPreferences } from "../types/progress";
 
 interface ProgressStore extends UserProgress {
   setUserName: (name: string) => void;
   setGenderPreference: (gender: "m" | "f" | "prefer-not-to-say" | null) => void;
+  updatePreferences: (prefs: Partial<UserPreferences>) => void;
   startLevel: (levelId: string) => void;
   completeLevel: (levelId: string, score: number) => void;
   completeChapter: (chapterId: string) => void;
@@ -43,6 +44,13 @@ export const useProgressStore = create<ProgressStore>()(
       setUserName: (name) => set({ userName: name }),
 
       setGenderPreference: (gender) => set({ genderPreference: gender }),
+
+      updatePreferences: (prefs) => set((state) => ({
+        preferences: {
+          ...state.preferences,
+          ...prefs,
+        },
+      })),
 
       startLevel: (levelId) => {
         const [chapterPart] = levelId.split("-");

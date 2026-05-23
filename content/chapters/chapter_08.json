@@ -1,0 +1,388 @@
+{
+  "id": "C08",
+  "number": 8,
+  "title": "Common Objects",
+  "subtitle": "Identifying household objects, tea, and description builders",
+  "goal": "Name key household objects, request a cup of tea (chai), and build descriptions.",
+  "estimatedMinutes": 14,
+  "culturalNote": "Chai is more than a drink in Pakistan — it is hospitality itself. Offering chai is the universal greeting when guests enter any home or business.",
+  "passingScore": 0.75,
+  "rewards": {
+    "xp": 50,
+    "completionMessage": "Aap ne baab 8 pura kiya! You completed Chapter 8. You have successfully mastered Common Objects!"
+  },
+  "phrases": [
+    {
+      "id": "C08-001",
+      "chapterId": "C08",
+      "levelId": "L8-1",
+      "order": 1,
+      "urdu": "چائے",
+      "roman": "Chai",
+      "english": "Tea",
+      "englishContextual": "Tea",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C08/C08-001-normal.m4a",
+        "slow": "audio/C08/C08-001-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Common Objects learning block."
+    },
+    {
+      "id": "C08-002",
+      "chapterId": "C08",
+      "levelId": "L8-1",
+      "order": 2,
+      "urdu": "گھر",
+      "roman": "Ghar",
+      "english": "House / Home",
+      "englishContextual": "House / Home",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C08/C08-002-normal.m4a",
+        "slow": "audio/C08/C08-002-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Common Objects learning block."
+    },
+    {
+      "id": "C08-003",
+      "chapterId": "C08",
+      "levelId": "L8-2",
+      "order": 3,
+      "urdu": "کتاب",
+      "roman": "Kitab",
+      "english": "Book",
+      "englishContextual": "Book",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C08/C08-003-normal.m4a",
+        "slow": "audio/C08/C08-003-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Common Objects learning block."
+    },
+    {
+      "id": "C08-004",
+      "chapterId": "C08",
+      "levelId": "L8-2",
+      "order": 4,
+      "urdu": "میز",
+      "roman": "Mez",
+      "english": "Table",
+      "englishContextual": "Table",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C08/C08-004-normal.m4a",
+        "slow": "audio/C08/C08-004-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Common Objects learning block."
+    },
+    {
+      "id": "C08-005",
+      "chapterId": "C08",
+      "levelId": "L8-2",
+      "order": 5,
+      "urdu": "کرسی",
+      "roman": "Kursi",
+      "english": "Chair",
+      "englishContextual": "Chair",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C08/C08-005-normal.m4a",
+        "slow": "audio/C08/C08-005-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Common Objects learning block."
+    }
+  ],
+  "levels": [
+    {
+      "id": "L8-1",
+      "chapterId": "C08",
+      "number": 1,
+      "title": "Practice Block 1",
+      "subtitle": "Mastering phrases for Common Objects",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [
+        "C08-001",
+        "C08-002"
+      ],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [
+        {
+          "id": "L8-1-E1-C08-001",
+          "type": "INTRODUCE",
+          "phraseId": "C08-001"
+        },
+        {
+          "id": "L8-1-E2-C08-001",
+          "type": "L_TO_M",
+          "phraseId": "C08-001",
+          "distractorPhraseIds": [
+            "C08-003",
+            "C08-004"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L8-1-E3-C08-001",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C08-001"
+        },
+        {
+          "id": "L8-1-E4-C08-001",
+          "type": "SPEAK",
+          "phraseId": "C08-001",
+          "prompt": "Say \"Tea\" in Urdu.",
+          "hint": "Chai"
+        },
+        {
+          "id": "L8-1-E1-C08-002",
+          "type": "INTRODUCE",
+          "phraseId": "C08-002"
+        },
+        {
+          "id": "L8-1-E2-C08-002",
+          "type": "L_TO_M",
+          "phraseId": "C08-002",
+          "distractorPhraseIds": [
+            "C08-003",
+            "C08-004"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L8-1-E3-C08-002",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C08-002"
+        },
+        {
+          "id": "L8-1-E4-C08-002",
+          "type": "SPEAK",
+          "phraseId": "C08-002",
+          "prompt": "Say \"House / Home\" in Urdu.",
+          "hint": "Ghar"
+        }
+      ],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L8-2",
+      "chapterId": "C08",
+      "number": 2,
+      "title": "Practice Block 2",
+      "subtitle": "Mastering phrases for Common Objects",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [
+        "C08-003",
+        "C08-004",
+        "C08-005"
+      ],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [
+        {
+          "id": "L8-2-E1-C08-003",
+          "type": "INTRODUCE",
+          "phraseId": "C08-003"
+        },
+        {
+          "id": "L8-2-E2-C08-003",
+          "type": "L_TO_M",
+          "phraseId": "C08-003",
+          "distractorPhraseIds": [
+            "C08-001",
+            "C08-002"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L8-2-E3-C08-003",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C08-003"
+        },
+        {
+          "id": "L8-2-E4-C08-003",
+          "type": "SPEAK",
+          "phraseId": "C08-003",
+          "prompt": "Say \"Book\" in Urdu.",
+          "hint": "Kitab"
+        },
+        {
+          "id": "L8-2-E1-C08-004",
+          "type": "INTRODUCE",
+          "phraseId": "C08-004"
+        },
+        {
+          "id": "L8-2-E2-C08-004",
+          "type": "L_TO_M",
+          "phraseId": "C08-004",
+          "distractorPhraseIds": [
+            "C08-001",
+            "C08-002"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L8-2-E3-C08-004",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C08-004"
+        },
+        {
+          "id": "L8-2-E4-C08-004",
+          "type": "SPEAK",
+          "phraseId": "C08-004",
+          "prompt": "Say \"Table\" in Urdu.",
+          "hint": "Mez"
+        },
+        {
+          "id": "L8-2-E1-C08-005",
+          "type": "INTRODUCE",
+          "phraseId": "C08-005"
+        },
+        {
+          "id": "L8-2-E2-C08-005",
+          "type": "L_TO_M",
+          "phraseId": "C08-005",
+          "distractorPhraseIds": [
+            "C08-001",
+            "C08-002"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L8-2-E3-C08-005",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C08-005"
+        },
+        {
+          "id": "L8-2-E4-C08-005",
+          "type": "SPEAK",
+          "phraseId": "C08-005",
+          "prompt": "Say \"Chair\" in Urdu.",
+          "hint": "Kursi"
+        }
+      ],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L8-3",
+      "chapterId": "C08",
+      "number": 3,
+      "title": "Practice Block 3",
+      "subtitle": "Mastering phrases for Common Objects",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L8-4",
+      "chapterId": "C08",
+      "number": 4,
+      "title": "Practice Block 4",
+      "subtitle": "Mastering phrases for Common Objects",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L8-5",
+      "chapterId": "C08",
+      "number": 5,
+      "title": "BOSS: Common Objects Capstone",
+      "subtitle": "Identifying household objects, tea, and description builders",
+      "type": "BOSS",
+      "estimatedMinutes": 4,
+      "newPhraseIds": [],
+      "reviewPhraseIds": [
+        "C08-001",
+        "C08-002",
+        "C08-003",
+        "C08-004",
+        "C08-005"
+      ],
+      "scenarioIntro": "You are visiting a relative's house in Islamabad. They welcome you and offer refreshments.",
+      "passingScore": 0.75,
+      "exerciseSequence": [
+        {
+          "id": "L8-5-E1",
+          "type": "SCENARIO_TURN",
+          "speakerLine": {
+            "audio": "audio/C08/scenario/turn1.m4a",
+            "urdu": "خوش آمدید! آپ چائے پیئیں گے؟",
+            "roman": "Khush aamdeed! Aap chai peeyenge?",
+            "english": "Welcome! Will you have tea?"
+          },
+          "expectedPhraseId": "C08-001",
+          "prompt": "Request warmly: Tea (Chai).",
+          "hint": null
+        },
+        {
+          "id": "L8-5-E2",
+          "type": "SCENARIO_TURN",
+          "speakerLine": {
+            "audio": "audio/C08/scenario/turn2.m4a",
+            "urdu": "کرسی پر بیٹھیں، گھر آپ کا ہی ہے۔",
+            "roman": "Kursi par baithein, ghar aap ka hi hai.",
+            "english": "Sit on the chair, this home is yours."
+          },
+          "expectedPhraseId": "C08-002",
+          "prompt": "Compliment their home: Home (Ghar).",
+          "hint": null
+        }
+      ],
+      "rewards": {
+        "xp": 25,
+        "chapterCompleteBonus": 50
+      }
+    }
+  ]
+}

@@ -1,0 +1,390 @@
+{
+  "id": "C06",
+  "number": 6,
+  "title": "Numbers 1–20",
+  "subtitle": "Counting items and learning the irregular teen numbers honestly",
+  "goal": "Learn numbers 1 to 20 out loud, and count everyday items.",
+  "estimatedMinutes": 14,
+  "culturalNote": "Unlike English, numbers 11 through 19 do not follow a simple pattern. Each teen number is a distinct word that requires direct memorization. You'll get it with practice!",
+  "passingScore": 0.75,
+  "rewards": {
+    "xp": 50,
+    "completionMessage": "Aap ne baab 6 pura kiya! You completed Chapter 6. You have successfully mastered Numbers 1–20!"
+  },
+  "phrases": [
+    {
+      "id": "C06-001",
+      "chapterId": "C06",
+      "levelId": "L6-1",
+      "order": 1,
+      "urdu": "ایک",
+      "roman": "Ek",
+      "english": "One",
+      "englishContextual": "One",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C06/C06-001-normal.m4a",
+        "slow": "audio/C06/C06-001-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Numbers 1–20 learning block."
+    },
+    {
+      "id": "C06-002",
+      "chapterId": "C06",
+      "levelId": "L6-1",
+      "order": 2,
+      "urdu": "دو",
+      "roman": "Do",
+      "english": "Two",
+      "englishContextual": "Two",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C06/C06-002-normal.m4a",
+        "slow": "audio/C06/C06-002-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Numbers 1–20 learning block."
+    },
+    {
+      "id": "C06-003",
+      "chapterId": "C06",
+      "levelId": "L6-1",
+      "order": 3,
+      "urdu": "تین",
+      "roman": "Teen",
+      "english": "Three",
+      "englishContextual": "Three",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C06/C06-003-normal.m4a",
+        "slow": "audio/C06/C06-003-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Numbers 1–20 learning block."
+    },
+    {
+      "id": "C06-004",
+      "chapterId": "C06",
+      "levelId": "L6-2",
+      "order": 4,
+      "urdu": "دس",
+      "roman": "Das",
+      "english": "Ten",
+      "englishContextual": "Ten",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C06/C06-004-normal.m4a",
+        "slow": "audio/C06/C06-004-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Numbers 1–20 learning block."
+    },
+    {
+      "id": "C06-005",
+      "chapterId": "C06",
+      "levelId": "L6-4",
+      "order": 5,
+      "urdu": "بیس",
+      "roman": "Bees",
+      "english": "Twenty",
+      "englishContextual": "Twenty",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C06/C06-005-normal.m4a",
+        "slow": "audio/C06/C06-005-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Numbers 1–20 learning block."
+    }
+  ],
+  "levels": [
+    {
+      "id": "L6-1",
+      "chapterId": "C06",
+      "number": 1,
+      "title": "Practice Block 1",
+      "subtitle": "Mastering phrases for Numbers 1–20",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [
+        "C06-001",
+        "C06-002",
+        "C06-003"
+      ],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [
+        {
+          "id": "L6-1-E1-C06-001",
+          "type": "INTRODUCE",
+          "phraseId": "C06-001"
+        },
+        {
+          "id": "L6-1-E2-C06-001",
+          "type": "L_TO_M",
+          "phraseId": "C06-001",
+          "distractorPhraseIds": [
+            "C06-004",
+            "C06-005"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L6-1-E3-C06-001",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C06-001"
+        },
+        {
+          "id": "L6-1-E4-C06-001",
+          "type": "SPEAK",
+          "phraseId": "C06-001",
+          "prompt": "Say \"One\" in Urdu.",
+          "hint": "Ek"
+        },
+        {
+          "id": "L6-1-E1-C06-002",
+          "type": "INTRODUCE",
+          "phraseId": "C06-002"
+        },
+        {
+          "id": "L6-1-E2-C06-002",
+          "type": "L_TO_M",
+          "phraseId": "C06-002",
+          "distractorPhraseIds": [
+            "C06-004",
+            "C06-005"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L6-1-E3-C06-002",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C06-002"
+        },
+        {
+          "id": "L6-1-E4-C06-002",
+          "type": "SPEAK",
+          "phraseId": "C06-002",
+          "prompt": "Say \"Two\" in Urdu.",
+          "hint": "Do"
+        },
+        {
+          "id": "L6-1-E1-C06-003",
+          "type": "INTRODUCE",
+          "phraseId": "C06-003"
+        },
+        {
+          "id": "L6-1-E2-C06-003",
+          "type": "L_TO_M",
+          "phraseId": "C06-003",
+          "distractorPhraseIds": [
+            "C06-004",
+            "C06-005"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L6-1-E3-C06-003",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C06-003"
+        },
+        {
+          "id": "L6-1-E4-C06-003",
+          "type": "SPEAK",
+          "phraseId": "C06-003",
+          "prompt": "Say \"Three\" in Urdu.",
+          "hint": "Teen"
+        }
+      ],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L6-2",
+      "chapterId": "C06",
+      "number": 2,
+      "title": "Practice Block 2",
+      "subtitle": "Mastering phrases for Numbers 1–20",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [
+        "C06-004"
+      ],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [
+        {
+          "id": "L6-2-E1-C06-004",
+          "type": "INTRODUCE",
+          "phraseId": "C06-004"
+        },
+        {
+          "id": "L6-2-E2-C06-004",
+          "type": "L_TO_M",
+          "phraseId": "C06-004",
+          "distractorPhraseIds": [
+            "C06-001",
+            "C06-002"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L6-2-E3-C06-004",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C06-004"
+        },
+        {
+          "id": "L6-2-E4-C06-004",
+          "type": "SPEAK",
+          "phraseId": "C06-004",
+          "prompt": "Say \"Ten\" in Urdu.",
+          "hint": "Das"
+        }
+      ],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L6-3",
+      "chapterId": "C06",
+      "number": 3,
+      "title": "Practice Block 3",
+      "subtitle": "Mastering phrases for Numbers 1–20",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L6-4",
+      "chapterId": "C06",
+      "number": 4,
+      "title": "Practice Block 4",
+      "subtitle": "Mastering phrases for Numbers 1–20",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [
+        "C06-005"
+      ],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [
+        {
+          "id": "L6-4-E1-C06-005",
+          "type": "INTRODUCE",
+          "phraseId": "C06-005"
+        },
+        {
+          "id": "L6-4-E2-C06-005",
+          "type": "L_TO_M",
+          "phraseId": "C06-005",
+          "distractorPhraseIds": [
+            "C06-001",
+            "C06-002"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L6-4-E3-C06-005",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C06-005"
+        },
+        {
+          "id": "L6-4-E4-C06-005",
+          "type": "SPEAK",
+          "phraseId": "C06-005",
+          "prompt": "Say \"Twenty\" in Urdu.",
+          "hint": "Bees"
+        }
+      ],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L6-5",
+      "chapterId": "C06",
+      "number": 5,
+      "title": "BOSS: Numbers 1–20 Capstone",
+      "subtitle": "Counting items and learning the irregular teen numbers honestly",
+      "type": "BOSS",
+      "estimatedMinutes": 4,
+      "newPhraseIds": [],
+      "reviewPhraseIds": [
+        "C06-001",
+        "C06-002",
+        "C06-003",
+        "C06-004",
+        "C06-005"
+      ],
+      "scenarioIntro": "You are ordering cups of tea (chai) at a local dhaba café. Tell the server how many cups you need.",
+      "passingScore": 0.75,
+      "exerciseSequence": [
+        {
+          "id": "L6-5-E1",
+          "type": "SCENARIO_TURN",
+          "speakerLine": {
+            "audio": "audio/C06/scenario/turn1.m4a",
+            "urdu": "جی بھائی، کتنی چائے چاہیے؟",
+            "roman": "Ji bhai, kitni chai chahiye?",
+            "english": "Yes brother, how many teas do you want?"
+          },
+          "expectedPhraseId": "C06-003",
+          "prompt": "Answer: Three.",
+          "hint": null
+        },
+        {
+          "id": "L6-5-E2",
+          "type": "SCENARIO_TURN",
+          "speakerLine": {
+            "audio": "audio/C06/scenario/turn2.m4a",
+            "urdu": "تین چائے، ٹھیک ہے! اور کچھ؟",
+            "roman": "Teen chai, theek hai! Aur kuch?",
+            "english": "Three teas, okay! Anything else?"
+          },
+          "expectedPhraseId": "C06-001",
+          "prompt": "Answer: One (more item).",
+          "hint": null
+        }
+      ],
+      "rewards": {
+        "xp": 25,
+        "chapterCompleteBonus": 50
+      }
+    }
+  ]
+}

@@ -5,7 +5,10 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 interface UserStore {
   name: string | null;
   genderPreference: "m" | "f" | "prefer-not-to-say" | null;
-  setProfile: (name: string, gender: "m" | "f" | "prefer-not-to-say") => void;
+  setProfile: (
+    name: string | null,
+    gender: "m" | "f" | "prefer-not-to-say" | null
+  ) => void;
   resetUser: () => void;
 }
 

@@ -1,0 +1,405 @@
+{
+  "id": "C02",
+  "number": 2,
+  "title": "Introducing Yourself",
+  "subtitle": "State your name, kahan se hain, and wedding meetings",
+  "goal": "State your name, ask someone else's name, say where you're from, and express pleasure at meeting.",
+  "estimatedMinutes": 14,
+  "culturalNote": "Pakistanis are exceptionally welcoming and love asking where you're from. If you're a heritage learner, answering 'Main America se hoon' (I'm from America) or naming your parents' home city like Lahore or Karachi instantly creates a warm connection.",
+  "passingScore": 0.75,
+  "rewards": {
+    "xp": 50,
+    "completionMessage": "Aap ne baab 2 pura kiya! You completed Chapter 2. You have successfully mastered Introducing Yourself!"
+  },
+  "phrases": [
+    {
+      "id": "C02-001",
+      "chapterId": "C02",
+      "levelId": "L2-1",
+      "order": 1,
+      "urdu": "میرا نام Sarah ہے",
+      "roman": "Mera naam Sarah hai",
+      "english": "My name is Sarah",
+      "englishContextual": "My name is Sarah",
+      "gender": "neutral",
+      "category": "greeting",
+      "audio": {
+        "normal": "audio/C02/C02-001-normal.m4a",
+        "slow": "audio/C02/C02-001-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Introducing Yourself learning block."
+    },
+    {
+      "id": "C02-002",
+      "chapterId": "C02",
+      "levelId": "L2-2",
+      "order": 2,
+      "urdu": "آپ کا نام کیا ہے؟",
+      "roman": "Aap ka naam kya hai?",
+      "english": "What is your name?",
+      "englishContextual": "What is your name?",
+      "gender": "neutral",
+      "category": "greeting",
+      "audio": {
+        "normal": "audio/C02/C02-002-normal.m4a",
+        "slow": "audio/C02/C02-002-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Introducing Yourself learning block."
+    },
+    {
+      "id": "C02-003",
+      "chapterId": "C02",
+      "levelId": "L2-3",
+      "order": 3,
+      "urdu": "میں امریکہ سے ہوں",
+      "roman": "Main America se hoon",
+      "english": "I am from America",
+      "englishContextual": "I am from America",
+      "gender": "neutral",
+      "category": "greeting",
+      "audio": {
+        "normal": "audio/C02/C02-003-normal.m4a",
+        "slow": "audio/C02/C02-003-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Introducing Yourself learning block."
+    },
+    {
+      "id": "C02-004",
+      "chapterId": "C02",
+      "levelId": "L2-3",
+      "order": 4,
+      "urdu": "آپ کہاں سے ہیں؟",
+      "roman": "Aap kahan se hain?",
+      "english": "Where are you from?",
+      "englishContextual": "Where are you from?",
+      "gender": "neutral",
+      "category": "greeting",
+      "audio": {
+        "normal": "audio/C02/C02-004-normal.m4a",
+        "slow": "audio/C02/C02-004-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Introducing Yourself learning block."
+    },
+    {
+      "id": "C02-005",
+      "chapterId": "C02",
+      "levelId": "L2-4",
+      "order": 5,
+      "urdu": "آپ سے مل کر خوشی ہوئی",
+      "roman": "Aap se mil kar khushi hui",
+      "english": "Pleased to meet you",
+      "englishContextual": "Pleased to meet you",
+      "gender": "neutral",
+      "category": "greeting",
+      "audio": {
+        "normal": "audio/C02/C02-005-normal.m4a",
+        "slow": "audio/C02/C02-005-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Introducing Yourself learning block."
+    }
+  ],
+  "levels": [
+    {
+      "id": "L2-1",
+      "chapterId": "C02",
+      "number": 1,
+      "title": "Practice Block 1",
+      "subtitle": "Mastering phrases for Introducing Yourself",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [
+        "C02-001"
+      ],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [
+        {
+          "id": "L2-1-E1-C02-001",
+          "type": "INTRODUCE",
+          "phraseId": "C02-001"
+        },
+        {
+          "id": "L2-1-E2-C02-001",
+          "type": "L_TO_M",
+          "phraseId": "C02-001",
+          "distractorPhraseIds": [
+            "C02-002",
+            "C02-003"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L2-1-E3-C02-001",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C02-001"
+        },
+        {
+          "id": "L2-1-E4-C02-001",
+          "type": "SPEAK",
+          "phraseId": "C02-001",
+          "prompt": "Say \"My name is Sarah\" in Urdu.",
+          "hint": "Mera naam Sarah hai"
+        }
+      ],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L2-2",
+      "chapterId": "C02",
+      "number": 2,
+      "title": "Practice Block 2",
+      "subtitle": "Mastering phrases for Introducing Yourself",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [
+        "C02-002"
+      ],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [
+        {
+          "id": "L2-2-E1-C02-002",
+          "type": "INTRODUCE",
+          "phraseId": "C02-002"
+        },
+        {
+          "id": "L2-2-E2-C02-002",
+          "type": "L_TO_M",
+          "phraseId": "C02-002",
+          "distractorPhraseIds": [
+            "C02-001",
+            "C02-003"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L2-2-E3-C02-002",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C02-002"
+        },
+        {
+          "id": "L2-2-E4-C02-002",
+          "type": "SPEAK",
+          "phraseId": "C02-002",
+          "prompt": "Say \"What is your name?\" in Urdu.",
+          "hint": "Aap ka naam kya hai?"
+        }
+      ],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L2-3",
+      "chapterId": "C02",
+      "number": 3,
+      "title": "Practice Block 3",
+      "subtitle": "Mastering phrases for Introducing Yourself",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [
+        "C02-003",
+        "C02-004"
+      ],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [
+        {
+          "id": "L2-3-E1-C02-003",
+          "type": "INTRODUCE",
+          "phraseId": "C02-003"
+        },
+        {
+          "id": "L2-3-E2-C02-003",
+          "type": "L_TO_M",
+          "phraseId": "C02-003",
+          "distractorPhraseIds": [
+            "C02-001",
+            "C02-002"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L2-3-E3-C02-003",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C02-003"
+        },
+        {
+          "id": "L2-3-E4-C02-003",
+          "type": "SPEAK",
+          "phraseId": "C02-003",
+          "prompt": "Say \"I am from America\" in Urdu.",
+          "hint": "Main America se hoon"
+        },
+        {
+          "id": "L2-3-E1-C02-004",
+          "type": "INTRODUCE",
+          "phraseId": "C02-004"
+        },
+        {
+          "id": "L2-3-E2-C02-004",
+          "type": "L_TO_M",
+          "phraseId": "C02-004",
+          "distractorPhraseIds": [
+            "C02-001",
+            "C02-002"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L2-3-E3-C02-004",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C02-004"
+        },
+        {
+          "id": "L2-3-E4-C02-004",
+          "type": "SPEAK",
+          "phraseId": "C02-004",
+          "prompt": "Say \"Where are you from?\" in Urdu.",
+          "hint": "Aap kahan se hain?"
+        }
+      ],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L2-4",
+      "chapterId": "C02",
+      "number": 4,
+      "title": "Practice Block 4",
+      "subtitle": "Mastering phrases for Introducing Yourself",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [
+        "C02-005"
+      ],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [
+        {
+          "id": "L2-4-E1-C02-005",
+          "type": "INTRODUCE",
+          "phraseId": "C02-005"
+        },
+        {
+          "id": "L2-4-E2-C02-005",
+          "type": "L_TO_M",
+          "phraseId": "C02-005",
+          "distractorPhraseIds": [
+            "C02-001",
+            "C02-002"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L2-4-E3-C02-005",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C02-005"
+        },
+        {
+          "id": "L2-4-E4-C02-005",
+          "type": "SPEAK",
+          "phraseId": "C02-005",
+          "prompt": "Say \"Pleased to meet you\" in Urdu.",
+          "hint": "Aap se mil kar khushi hui"
+        }
+      ],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L2-5",
+      "chapterId": "C02",
+      "number": 5,
+      "title": "BOSS: Introducing Yourself Capstone",
+      "subtitle": "State your name, kahan se hain, and wedding meetings",
+      "type": "BOSS",
+      "estimatedMinutes": 4,
+      "newPhraseIds": [],
+      "reviewPhraseIds": [
+        "C02-001",
+        "C02-002",
+        "C02-003",
+        "C02-004",
+        "C02-005"
+      ],
+      "scenarioIntro": "A Pakistani cousin you've never met before approaches you at a family wedding. Exchange names, ask where they live, and say it's a pleasure to meet them.",
+      "passingScore": 0.75,
+      "exerciseSequence": [
+        {
+          "id": "L2-5-E1",
+          "type": "SCENARIO_TURN",
+          "speakerLine": {
+            "audio": "audio/C02/scenario/turn1.m4a",
+            "urdu": "السلام علیکم، میں علی ہوں۔ آپ کا نام کیا ہے؟",
+            "roman": "Assalam alaikum, main Ali hoon. Aap ka naam kya hai?",
+            "english": "Hello, I am Ali. What is your name?"
+          },
+          "expectedPhraseId": "C02-001",
+          "prompt": "Tell him your name is Sarah.",
+          "hint": null
+        },
+        {
+          "id": "L2-5-E2",
+          "type": "SCENARIO_TURN",
+          "speakerLine": {
+            "audio": "audio/C02/scenario/turn2.m4a",
+            "urdu": "آپ سے مل کر خوشی ہوئی! آپ کہاں سے ہیں؟",
+            "roman": "Aap se mil kar khushi hui! Aap kahan se hain?",
+            "english": "Pleased to meet you! Where are you from?"
+          },
+          "expectedPhraseId": "C02-003",
+          "prompt": "Tell him you are from America.",
+          "hint": null
+        },
+        {
+          "id": "L2-5-E3",
+          "type": "SCENARIO_TURN",
+          "speakerLine": {
+            "audio": "audio/C02/scenario/turn3.m4a",
+            "urdu": "بہت اچھا! میں لاہور سے ہوں۔",
+            "roman": "Bohat acha! Main Lahore se hoon.",
+            "english": "Very nice! I am from Lahore."
+          },
+          "expectedPhraseId": "C02-005",
+          "prompt": "Say it's a pleasure to meet him.",
+          "hint": null
+        }
+      ],
+      "rewards": {
+        "xp": 25,
+        "chapterCompleteBonus": 50
+      }
+    }
+  ]
+}

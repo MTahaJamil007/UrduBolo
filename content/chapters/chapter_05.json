@@ -1,0 +1,442 @@
+{
+  "id": "C05",
+  "number": 5,
+  "title": "Family (Extended)",
+  "subtitle": "Distinctive maternal vs paternal family terms at a Pakistani wedding",
+  "goal": "Distinguish paternal vs maternal uncles and aunts, and navigate extended family relations.",
+  "estimatedMinutes": 14,
+  "culturalNote": "Urdu family trees are highly specific. Dad's brother is 'chacha', mom's brother is 'mamu'. Your relations immediately know which side of the family you are referring to!",
+  "passingScore": 0.75,
+  "rewards": {
+    "xp": 50,
+    "completionMessage": "Aap ne baab 5 pura kiya! You completed Chapter 5. You have successfully mastered Family (Extended)!"
+  },
+  "phrases": [
+    {
+      "id": "C05-001",
+      "chapterId": "C05",
+      "levelId": "L5-1",
+      "order": 1,
+      "urdu": "دادا",
+      "roman": "Dada",
+      "english": "Paternal Grandfather",
+      "englishContextual": "Paternal Grandfather",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C05/C05-001-normal.m4a",
+        "slow": "audio/C05/C05-001-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Family (Extended) learning block."
+    },
+    {
+      "id": "C05-002",
+      "chapterId": "C05",
+      "levelId": "L5-1",
+      "order": 2,
+      "urdu": "دادی",
+      "roman": "Dadi",
+      "english": "Paternal Grandmother",
+      "englishContextual": "Paternal Grandmother",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C05/C05-002-normal.m4a",
+        "slow": "audio/C05/C05-002-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Family (Extended) learning block."
+    },
+    {
+      "id": "C05-003",
+      "chapterId": "C05",
+      "levelId": "L5-1",
+      "order": 3,
+      "urdu": "نانا",
+      "roman": "Nana",
+      "english": "Maternal Grandfather",
+      "englishContextual": "Maternal Grandfather",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C05/C05-003-normal.m4a",
+        "slow": "audio/C05/C05-003-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Family (Extended) learning block."
+    },
+    {
+      "id": "C05-004",
+      "chapterId": "C05",
+      "levelId": "L5-1",
+      "order": 4,
+      "urdu": "نانی",
+      "roman": "Nani",
+      "english": "Maternal Grandmother",
+      "englishContextual": "Maternal Grandmother",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C05/C05-004-normal.m4a",
+        "slow": "audio/C05/C05-004-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Family (Extended) learning block."
+    },
+    {
+      "id": "C05-005",
+      "chapterId": "C05",
+      "levelId": "L5-2",
+      "order": 5,
+      "urdu": "چچا",
+      "roman": "Chacha",
+      "english": "Paternal Uncle",
+      "englishContextual": "Paternal Uncle",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C05/C05-005-normal.m4a",
+        "slow": "audio/C05/C05-005-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Family (Extended) learning block."
+    },
+    {
+      "id": "C05-006",
+      "chapterId": "C05",
+      "levelId": "L5-3",
+      "order": 6,
+      "urdu": "خالہ",
+      "roman": "Khala",
+      "english": "Maternal Aunt",
+      "englishContextual": "Maternal Aunt",
+      "gender": "neutral",
+      "category": "vocabulary",
+      "audio": {
+        "normal": "audio/C05/C05-006-normal.m4a",
+        "slow": "audio/C05/C05-006-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Family (Extended) learning block."
+    }
+  ],
+  "levels": [
+    {
+      "id": "L5-1",
+      "chapterId": "C05",
+      "number": 1,
+      "title": "Practice Block 1",
+      "subtitle": "Mastering phrases for Family (Extended)",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [
+        "C05-001",
+        "C05-002",
+        "C05-003",
+        "C05-004"
+      ],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [
+        {
+          "id": "L5-1-E1-C05-001",
+          "type": "INTRODUCE",
+          "phraseId": "C05-001"
+        },
+        {
+          "id": "L5-1-E2-C05-001",
+          "type": "L_TO_M",
+          "phraseId": "C05-001",
+          "distractorPhraseIds": [
+            "C05-005",
+            "C05-006"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L5-1-E3-C05-001",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C05-001"
+        },
+        {
+          "id": "L5-1-E4-C05-001",
+          "type": "SPEAK",
+          "phraseId": "C05-001",
+          "prompt": "Say \"Paternal Grandfather\" in Urdu.",
+          "hint": "Dada"
+        },
+        {
+          "id": "L5-1-E1-C05-002",
+          "type": "INTRODUCE",
+          "phraseId": "C05-002"
+        },
+        {
+          "id": "L5-1-E2-C05-002",
+          "type": "L_TO_M",
+          "phraseId": "C05-002",
+          "distractorPhraseIds": [
+            "C05-005",
+            "C05-006"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L5-1-E3-C05-002",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C05-002"
+        },
+        {
+          "id": "L5-1-E4-C05-002",
+          "type": "SPEAK",
+          "phraseId": "C05-002",
+          "prompt": "Say \"Paternal Grandmother\" in Urdu.",
+          "hint": "Dadi"
+        },
+        {
+          "id": "L5-1-E1-C05-003",
+          "type": "INTRODUCE",
+          "phraseId": "C05-003"
+        },
+        {
+          "id": "L5-1-E2-C05-003",
+          "type": "L_TO_M",
+          "phraseId": "C05-003",
+          "distractorPhraseIds": [
+            "C05-005",
+            "C05-006"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L5-1-E3-C05-003",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C05-003"
+        },
+        {
+          "id": "L5-1-E4-C05-003",
+          "type": "SPEAK",
+          "phraseId": "C05-003",
+          "prompt": "Say \"Maternal Grandfather\" in Urdu.",
+          "hint": "Nana"
+        },
+        {
+          "id": "L5-1-E1-C05-004",
+          "type": "INTRODUCE",
+          "phraseId": "C05-004"
+        },
+        {
+          "id": "L5-1-E2-C05-004",
+          "type": "L_TO_M",
+          "phraseId": "C05-004",
+          "distractorPhraseIds": [
+            "C05-005",
+            "C05-006"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L5-1-E3-C05-004",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C05-004"
+        },
+        {
+          "id": "L5-1-E4-C05-004",
+          "type": "SPEAK",
+          "phraseId": "C05-004",
+          "prompt": "Say \"Maternal Grandmother\" in Urdu.",
+          "hint": "Nani"
+        }
+      ],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L5-2",
+      "chapterId": "C05",
+      "number": 2,
+      "title": "Practice Block 2",
+      "subtitle": "Mastering phrases for Family (Extended)",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [
+        "C05-005"
+      ],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [
+        {
+          "id": "L5-2-E1-C05-005",
+          "type": "INTRODUCE",
+          "phraseId": "C05-005"
+        },
+        {
+          "id": "L5-2-E2-C05-005",
+          "type": "L_TO_M",
+          "phraseId": "C05-005",
+          "distractorPhraseIds": [
+            "C05-001",
+            "C05-002"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L5-2-E3-C05-005",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C05-005"
+        },
+        {
+          "id": "L5-2-E4-C05-005",
+          "type": "SPEAK",
+          "phraseId": "C05-005",
+          "prompt": "Say \"Paternal Uncle\" in Urdu.",
+          "hint": "Chacha"
+        }
+      ],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L5-3",
+      "chapterId": "C05",
+      "number": 3,
+      "title": "Practice Block 3",
+      "subtitle": "Mastering phrases for Family (Extended)",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [
+        "C05-006"
+      ],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [
+        {
+          "id": "L5-3-E1-C05-006",
+          "type": "INTRODUCE",
+          "phraseId": "C05-006"
+        },
+        {
+          "id": "L5-3-E2-C05-006",
+          "type": "L_TO_M",
+          "phraseId": "C05-006",
+          "distractorPhraseIds": [
+            "C05-001",
+            "C05-002"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L5-3-E3-C05-006",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C05-006"
+        },
+        {
+          "id": "L5-3-E4-C05-006",
+          "type": "SPEAK",
+          "phraseId": "C05-006",
+          "prompt": "Say \"Maternal Aunt\" in Urdu.",
+          "hint": "Khala"
+        }
+      ],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L5-4",
+      "chapterId": "C05",
+      "number": 4,
+      "title": "Practice Block 4",
+      "subtitle": "Mastering phrases for Family (Extended)",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L5-5",
+      "chapterId": "C05",
+      "number": 5,
+      "title": "BOSS: Family (Extended) Capstone",
+      "subtitle": "Distinctive maternal vs paternal family terms at a Pakistani wedding",
+      "type": "BOSS",
+      "estimatedMinutes": 4,
+      "newPhraseIds": [],
+      "reviewPhraseIds": [
+        "C05-001",
+        "C05-002",
+        "C05-003",
+        "C05-004",
+        "C05-005",
+        "C05-006"
+      ],
+      "scenarioIntro": "At a large family wedding, your maternal grandmother and paternal uncle walk up. Greet them by their correct Urdu titles.",
+      "passingScore": 0.75,
+      "exerciseSequence": [
+        {
+          "id": "L5-5-E1",
+          "type": "SCENARIO_TURN",
+          "speakerLine": {
+            "audio": "audio/C05/scenario/turn1.m4a",
+            "urdu": "بیٹا، السلام علیکم! پہچانا مجھے؟",
+            "roman": "Beta, Assalam alaikum! Pehchana mujhe?",
+            "english": "Child, hello! Do you recognize me? (Maternal grandmother)"
+          },
+          "expectedPhraseId": "C05-004",
+          "prompt": "Respond: Hello Nani!",
+          "hint": null
+        },
+        {
+          "id": "L5-5-E2",
+          "type": "SCENARIO_TURN",
+          "speakerLine": {
+            "audio": "audio/C05/scenario/turn2.m4a",
+            "urdu": "اور میں کون ہوں؟",
+            "roman": "Aur main kaun hoon?",
+            "english": "And who am I? (Paternal uncle)"
+          },
+          "expectedPhraseId": "C05-005",
+          "prompt": "Identify him: Chacha.",
+          "hint": null
+        }
+      ],
+      "rewards": {
+        "xp": 25,
+        "chapterCompleteBonus": 50
+      }
+    }
+  ]
+}

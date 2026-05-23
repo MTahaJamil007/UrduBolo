@@ -1,0 +1,286 @@
+{
+  "id": "C09",
+  "number": 9,
+  "title": "Register Practice (Aap / Tum / Tu)",
+  "subtitle": "Choosing the correct level of respect across different relationships",
+  "goal": "Practice matching register honorific pronouns (Aap, Tum, Tu) based on relationships and social context.",
+  "estimatedMinutes": 14,
+  "culturalNote": "Always default to 'Aap' with strangers, service staff, elders, and in-laws. 'Tum' is reserved for peers and younger relatives. 'Tu' is highly intimate (close friends/siblings) or can sound rude if misused.",
+  "passingScore": 0.75,
+  "rewards": {
+    "xp": 50,
+    "completionMessage": "Aap ne baab 9 pura kiya! You completed Chapter 9. You have successfully mastered Register Practice (Aap / Tum / Tu)!"
+  },
+  "phrases": [
+    {
+      "id": "C09-001",
+      "chapterId": "C09",
+      "levelId": "L9-1",
+      "order": 1,
+      "urdu": "آپ کیسے ہیں؟",
+      "roman": "Aap kaise hain?",
+      "english": "How are you? (Aap - respectful)",
+      "englishContextual": "How are you? (Aap - respectful)",
+      "gender": "neutral",
+      "category": "greeting",
+      "audio": {
+        "normal": "audio/C09/C09-001-normal.m4a",
+        "slow": "audio/C09/C09-001-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Register Practice (Aap / Tum / Tu) learning block."
+    },
+    {
+      "id": "C09-002",
+      "chapterId": "C09",
+      "levelId": "L9-2",
+      "order": 2,
+      "urdu": "تم کیسے ہو؟",
+      "roman": "Tum kaise ho?",
+      "english": "How are you? (Tum - casual)",
+      "englishContextual": "How are you? (Tum - casual)",
+      "gender": "neutral",
+      "category": "greeting",
+      "audio": {
+        "normal": "audio/C09/C09-002-normal.m4a",
+        "slow": "audio/C09/C09-002-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Register Practice (Aap / Tum / Tu) learning block."
+    },
+    {
+      "id": "C09-003",
+      "chapterId": "C09",
+      "levelId": "L9-3",
+      "order": 3,
+      "urdu": "تو کیسا ہے؟",
+      "roman": "Tu kaisa hai?",
+      "english": "How are you? (Tu - intimate/slang)",
+      "englishContextual": "How are you? (Tu - intimate/slang)",
+      "gender": "neutral",
+      "category": "greeting",
+      "audio": {
+        "normal": "audio/C09/C09-003-normal.m4a",
+        "slow": "audio/C09/C09-003-slow.m4a"
+      },
+      "image": null,
+      "exerciseTypes": [
+        "L_TO_M",
+        "LISTEN_REPEAT",
+        "SPEAK"
+      ],
+      "notes": "Seeded phrase for Register Practice (Aap / Tum / Tu) learning block."
+    }
+  ],
+  "levels": [
+    {
+      "id": "L9-1",
+      "chapterId": "C09",
+      "number": 1,
+      "title": "Practice Block 1",
+      "subtitle": "Mastering phrases for Register Practice (Aap / Tum / Tu)",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [
+        "C09-001"
+      ],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [
+        {
+          "id": "L9-1-E1-C09-001",
+          "type": "INTRODUCE",
+          "phraseId": "C09-001"
+        },
+        {
+          "id": "L9-1-E2-C09-001",
+          "type": "L_TO_M",
+          "phraseId": "C09-001",
+          "distractorPhraseIds": [
+            "C09-002",
+            "C09-003"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L9-1-E3-C09-001",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C09-001"
+        },
+        {
+          "id": "L9-1-E4-C09-001",
+          "type": "SPEAK",
+          "phraseId": "C09-001",
+          "prompt": "Say \"How are you? (Aap - respectful)\" in Urdu.",
+          "hint": "Aap kaise hain?"
+        }
+      ],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L9-2",
+      "chapterId": "C09",
+      "number": 2,
+      "title": "Practice Block 2",
+      "subtitle": "Mastering phrases for Register Practice (Aap / Tum / Tu)",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [
+        "C09-002"
+      ],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [
+        {
+          "id": "L9-2-E1-C09-002",
+          "type": "INTRODUCE",
+          "phraseId": "C09-002"
+        },
+        {
+          "id": "L9-2-E2-C09-002",
+          "type": "L_TO_M",
+          "phraseId": "C09-002",
+          "distractorPhraseIds": [
+            "C09-001",
+            "C09-003"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L9-2-E3-C09-002",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C09-002"
+        },
+        {
+          "id": "L9-2-E4-C09-002",
+          "type": "SPEAK",
+          "phraseId": "C09-002",
+          "prompt": "Say \"How are you? (Tum - casual)\" in Urdu.",
+          "hint": "Tum kaise ho?"
+        }
+      ],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L9-3",
+      "chapterId": "C09",
+      "number": 3,
+      "title": "Practice Block 3",
+      "subtitle": "Mastering phrases for Register Practice (Aap / Tum / Tu)",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [
+        "C09-003"
+      ],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [
+        {
+          "id": "L9-3-E1-C09-003",
+          "type": "INTRODUCE",
+          "phraseId": "C09-003"
+        },
+        {
+          "id": "L9-3-E2-C09-003",
+          "type": "L_TO_M",
+          "phraseId": "C09-003",
+          "distractorPhraseIds": [
+            "C09-001",
+            "C09-002"
+          ],
+          "prompt": "Identify the Urdu meaning."
+        },
+        {
+          "id": "L9-3-E3-C09-003",
+          "type": "LISTEN_REPEAT",
+          "phraseId": "C09-003"
+        },
+        {
+          "id": "L9-3-E4-C09-003",
+          "type": "SPEAK",
+          "phraseId": "C09-003",
+          "prompt": "Say \"How are you? (Tu - intimate/slang)\" in Urdu.",
+          "hint": "Tu kaisa hai?"
+        }
+      ],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L9-4",
+      "chapterId": "C09",
+      "number": 4,
+      "title": "Practice Block 4",
+      "subtitle": "Mastering phrases for Register Practice (Aap / Tum / Tu)",
+      "type": "STANDARD",
+      "estimatedMinutes": 2,
+      "newPhraseIds": [],
+      "reviewPhraseIds": [],
+      "exerciseSequence": [],
+      "rewards": {
+        "xp": 10
+      }
+    },
+    {
+      "id": "L9-5",
+      "chapterId": "C09",
+      "number": 5,
+      "title": "BOSS: Register Practice (Aap / Tum / Tu) Capstone",
+      "subtitle": "Choosing the correct level of respect across different relationships",
+      "type": "BOSS",
+      "estimatedMinutes": 4,
+      "newPhraseIds": [],
+      "reviewPhraseIds": [
+        "C09-001",
+        "C09-002",
+        "C09-003"
+      ],
+      "scenarioIntro": "Practice switching registers. First, address a taxi driver (respectful), and then address your younger brother (casual).",
+      "passingScore": 0.75,
+      "exerciseSequence": [
+        {
+          "id": "L9-5-E1",
+          "type": "SCENARIO_TURN",
+          "speakerLine": {
+            "audio": "audio/C09/scenario/turn1.m4a",
+            "urdu": "جی باجی، کہاں جانا ہے؟",
+            "roman": "Ji baji, kahan jana hai?",
+            "english": "Yes sister, where do we go? (Taxi driver greets you)"
+          },
+          "expectedPhraseId": "C09-001",
+          "prompt": "Greet him respectfully: How are you? (Aap)",
+          "hint": null
+        },
+        {
+          "id": "L9-5-E2",
+          "type": "SCENARIO_TURN",
+          "speakerLine": {
+            "audio": "audio/C09/scenario/turn2.m4a",
+            "urdu": "بھائی! میں بھی آ رہا ہوں۔",
+            "roman": "Bhai! Main bhi aa raha hoon.",
+            "english": "Brother! I'm coming too. (Younger brother runs up)"
+          },
+          "expectedPhraseId": "C09-002",
+          "prompt": "Greet your brother casually: How are you? (Tum)",
+          "hint": null
+        }
+      ],
+      "rewards": {
+        "xp": 25,
+        "chapterCompleteBonus": 50
+      }
+    }
+  ]
+}
