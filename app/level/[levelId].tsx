@@ -17,6 +17,8 @@ import { stopAllAudio } from "../../services/audioService";
 import ProgressBar from "../../components/ProgressBar";
 import IntroduceExercise from "../../components/exercises/IntroduceExercise";
 import ListenToMeaningExercise from "../../components/exercises/ListenToMeaningExercise";
+import SpeakExercise from "../../components/exercises/SpeakExercise";
+import ListenRepeatExercise from "../../components/exercises/ListenRepeatExercise";
 import { colors } from "../../constants/colors";
 
 export default function LevelPlayerScreen() {
@@ -126,6 +128,24 @@ export default function LevelPlayerScreen() {
       case "L_TO_M": {
         return (
           <ListenToMeaningExercise
+            exercise={exercise as any}
+            parentChapter={activeChapter}
+            onNext={(passed, score, attempts) => handleExerciseComplete(passed, score, attempts)}
+          />
+        );
+      }
+      case "LISTEN_REPEAT": {
+        return (
+          <ListenRepeatExercise
+            exercise={exercise as any}
+            parentChapter={activeChapter}
+            onNext={(passed, score, attempts) => handleExerciseComplete(passed, score, attempts)}
+          />
+        );
+      }
+      case "SPEAK": {
+        return (
+          <SpeakExercise
             exercise={exercise as any}
             parentChapter={activeChapter}
             onNext={(passed, score, attempts) => handleExerciseComplete(passed, score, attempts)}
