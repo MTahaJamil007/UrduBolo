@@ -1,115 +1,197 @@
-import React from "react";
-import { View, Text, TouchableOpacity, Alert, SafeAreaView, StyleSheet } from "react-native";
+import React, { useEffect, useState } from "react";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  TouchableOpacity,
+  ActivityIndicator,
+  Alert,
+  StyleSheet,
+} from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
+import { ArrowLeft, Volume2, ShieldAlert } from "lucide-react-native";
+import { useChapterStore } from "../../stores/useChapterStore";
 import { useProgressStore } from "../../stores/useProgressStore";
-import { useUserStore } from "../../stores/useUserStore";
+import { loadChapter, getPhraseById } from "../../services/contentService";
+import { stopAllAudio } from "../../services/audioService";
+import ProgressBar from "../../components/ProgressBar";
+import IntroduceExercise from "../../components/exercises/IntroduceExercise";
+import ListenToMeaningExercise from "../../components/exercises/ListenToMeaningExercise";
 import { colors } from "../../constants/colors";
-import { Crown, BookOpen, ArrowLeft, CheckCircle2 } from "lucide-react-native";
 
-export default function LevelPlayerPlaceholder() {
+export default function LevelPlayerScreen() {
   const router = useRouter();
   const { levelId } = useLocalSearchParams<{ levelId: string }>();
 
-  // Extract chapter and level numbers
-  const [chapterPart, levelPart] = levelId.split("-");
-  const chapterNum = parseInt(chapterPart.slice(1), 10);
-  const levelNum = parseInt(levelPart, 10);
-  const chapterId = `C${chapterNum.toString().padStart(2, "0")}`;
-  const isBoss = levelNum === 5;
+  const [loading, setLoading] = useState(true);
 
-  // Progress store hooks
+  // Zustand Store mappings
+  const {
+    activeChapter,
+    activeLevel,
+    currentExerciseIndex,
+    exercises,
+    results,
+    setActive,
+    recordResult,
+    advance,
+    reset,
+  } = useChapterStore();
+
   const completeLevel = useProgressStore((state) => state.completeLevel);
-  const completeChapter = useProgressStore((state) => state.completeChapter);
-  const addXP = useProgressStore((state) => state.addXP);
 
-  const handleMockComplete = () => {
-    // 1. Complete this level with a mastery score of 90% (>= 75% passes)
-    completeLevel(levelId, 0.9);
+  useEffect(() => {
+    async function initLevel() {
+      setLoading(true);
+      await stopAllAudio();
 
-    // 2. If it is the BOSS level, trigger chapter completion
-    if (isBoss) {
-      completeChapter(chapterId);
-      addXP(50); // Award Chapter Complete bonus XP
-      Alert.alert(
-        "🎉 Chapter Complete!",
-        `Congratulations! You completed Chapter ${chapterNum} Boss Challenge and unlocked Chapter ${chapterNum + 1}!`,
-        [{ text: "Back to Path", onPress: () => router.dismissAll() }]
-      );
-    } else {
-      Alert.alert(
-        "✅ Level Passed!",
-        `You completed Level ${chapterNum}.${levelNum} and earned 10 XP!`,
-        [{ text: "Back to Path", onPress: () => router.back() }]
-      );
+      const [chapterPart] = levelId.split("-");
+      const chapterId = `C${chapterPart.slice(1).padStart(2, "0")}`;
+
+      const chapter = await loadChapter(chapterId);
+      if (chapter) {
+        const level = chapter.levels.find((l) => l.id === levelId);
+        if (level) {
+          setActive(chapter, level);
+        } else {
+          Alert.alert("Error", `Level ${levelId} not found in Chapter ${chapterId}`);
+          router.back();
+        }
+      } else {
+        Alert.alert("Error", `Failed to load parent chapter ${chapterId}`);
+        router.back();
+      }
+      setLoading(false);
+    }
+
+    initLevel();
+
+    return () => {
+      reset();
+      stopAllAudio();
+    };
+  }, [levelId]);
+
+  if (loading || !activeChapter || !activeLevel) {
+    return (
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color={colors.primaryLight} />
+      </View>
+    );
+  }
+
+  const exercise = exercises[currentExerciseIndex];
+  const progress = exercises.length > 0 ? currentExerciseIndex / exercises.length : 0;
+
+  const handleExerciseComplete = (passed: boolean, score: number, attempts: number) => {
+    if (!exercise) return;
+    
+    // 1. Record individual exercise result
+    recordResult(exercise.id, passed, score, attempts);
+
+    // 2. Advance to the next exercise or finish
+    const hasMore = advance();
+    if (!hasMore) {
+      handleLevelFinished();
+    }
+  };
+
+  const handleLevelFinished = () => {
+    // Calculate overall mastery score
+    const currentResults = useChapterStore.getState().results;
+    const totalScore = currentResults.reduce((sum, r) => sum + r.score, 0);
+    const averageScore = currentResults.length > 0 ? totalScore / currentResults.length : 0.0;
+
+    // Persist level completion state in progress store
+    completeLevel(activeLevel.id, averageScore);
+
+    // Navigate to victory result screen
+    router.replace(`/level/result?levelId=${activeLevel.id}&score=${averageScore}`);
+  };
+
+  const renderActiveExercise = () => {
+    if (!exercise) return null;
+
+    switch (exercise.type) {
+      case "INTRODUCE": {
+        const phrase = getPhraseById(activeChapter, exercise.phraseId);
+        if (!phrase) return null;
+        return (
+          <IntroduceExercise
+            phrase={phrase}
+            onNext={() => handleExerciseComplete(true, 1.0, 1)}
+          />
+        );
+      }
+      case "L_TO_M": {
+        return (
+          <ListenToMeaningExercise
+            exercise={exercise as any}
+            parentChapter={activeChapter}
+            onNext={(passed, score, attempts) => handleExerciseComplete(passed, score, attempts)}
+          />
+        );
+      }
+      default: {
+        // Fallback placeholder card for exercise types not yet implemented in Sprint 4
+        // (LISTEN_REPEAT, SPEAK, SCENARIO_TURN - built in Sprints 5 & 6)
+        const phrase = "phraseId" in exercise ? getPhraseById(activeChapter, exercise.phraseId) : null;
+        
+        return (
+          <View style={styles.placeholderCard}>
+            <ShieldAlert size={48} color={colors.warning} style={{ marginBottom: 16 }} />
+            <Text style={styles.placeholderType}>
+              Exercise type: {exercise.type}
+            </Text>
+            <Text style={styles.placeholderTitle}>
+              {phrase ? `Practice: "${phrase.roman}"` : "Interactive Practice"}
+            </Text>
+            <Text style={styles.placeholderDesc}>
+              This exercise type ({exercise.type}) is configured for Level {activeLevel.number} and will be fully unlocked in subsequent sprints.
+            </Text>
+
+            <TouchableOpacity
+              activeOpacity={0.8}
+              onPress={() => handleExerciseComplete(true, 1.0, 1)}
+              style={styles.simulateBtn}
+            >
+              <Text style={styles.simulateBtnText}>Simulate Correct Speaking</Text>
+            </TouchableOpacity>
+          </View>
+        );
+      }
     }
   };
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <View style={styles.container}>
-        {/* Navigation Bar */}
-        <View style={styles.navBar}>
-          <TouchableOpacity onPress={() => router.back()} style={styles.backButton}>
-            <ArrowLeft size={24} color="#ffffff" />
-          </TouchableOpacity>
-          <Text style={styles.navTitle}>Practice Session</Text>
-          <View style={{ width: 44 }} />
-        </View>
-
-        {/* Level Details Panel */}
-        <View style={styles.detailsCard}>
-          <View
-            className={`w-20 h-20 rounded-full items-center justify-center mb-6 border-2 ${
-              isBoss
-                ? "bg-[#d97706]/20 border-[#f59e0b]"
-                : "bg-[#0f766e]/20 border-[#14b8a6]"
-            }`}
-          >
-            {isBoss ? (
-              <Crown size={40} color="#f59e0b" fill="#f59e0b" />
-            ) : (
-              <BookOpen size={40} color="#2dd4bf" />
-            )}
-          </View>
-
-          <Text style={styles.subtitle}>
-            Chapter {chapterNum} • Level {chapterNum}.{levelNum}
-          </Text>
-          
-          <Text style={styles.title}>
-            {isBoss ? "BOSS: First Meeting" : `Level ${chapterNum}.${levelNum} Practice`}
-          </Text>
-
-          <Text style={styles.description}>
-            {isBoss
-              ? "Your neighbor has visited you. Complete all dialogue loops and respond in polite Urdu to pass this chapter challenge!"
-              : "Learn new vocabulary items, practice hearing normal and slow pronunciations, and repeat aloud."}
+      {/* 1. Header controls & progress tracking */}
+      <View style={styles.header}>
+        <TouchableOpacity
+          onPress={() => {
+            Alert.alert("Quit Session", "Are you sure you want to quit this practice session? Your progress will not be saved.", [
+              { text: "Cancel", style: "cancel" },
+              { text: "Quit", style: "destructive", onPress: () => router.back() },
+            ]);
+          }}
+          style={styles.closeButton}
+        >
+          <ArrowLeft size={22} color="#ffffff" />
+        </TouchableOpacity>
+        
+        <View style={styles.progressWrapper}>
+          <ProgressBar progress={progress} />
+          <Text style={styles.progressText}>
+            {currentExerciseIndex + 1} of {exercises.length}
           </Text>
         </View>
 
-        {/* Action Triggers */}
-        <View style={styles.actionsContainer}>
-          <TouchableOpacity
-            activeOpacity={0.8}
-            onPress={handleMockComplete}
-            style={[
-              styles.primaryButton,
-              { backgroundColor: isBoss ? colors.accent : colors.primaryLight },
-            ]}
-          >
-            <CheckCircle2 size={22} color="#ffffff" style={{ marginRight: 8 }} />
-            <Text style={styles.primaryButtonText}>
-              {isBoss ? "Mock Complete Chapter Boss" : "Mock Complete Level"}
-            </Text>
-          </TouchableOpacity>
+        <View style={{ width: 44 }} />
+      </View>
 
-          <TouchableOpacity
-            onPress={() => router.back()}
-            style={styles.secondaryButton}
-          >
-            <Text style={styles.secondaryButtonText}>Quit Practice</Text>
-          </TouchableOpacity>
-        </View>
+      {/* 2. Primary Exercise view port */}
+      <View style={styles.content}>
+        {renderActiveExercise()}
       </View>
     </SafeAreaView>
   );
@@ -120,18 +202,20 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.background,
   },
-  container: {
+  loadingContainer: {
     flex: 1,
-    paddingHorizontal: 24,
-    paddingBottom: 40,
+    backgroundColor: colors.background,
+    alignItems: "center",
+    justifyContent: "center",
   },
-  navBar: {
+  header: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+    paddingHorizontal: 16,
     height: 56,
   },
-  backButton: {
+  closeButton: {
     width: 44,
     height: 44,
     alignItems: "center",
@@ -139,84 +223,76 @@ const styles = StyleSheet.create({
     backgroundColor: "#0d5c56",
     borderRadius: 22,
   },
-  navTitle: {
-    color: "#ffffff",
-    fontSize: 16,
-    fontWeight: "700",
-  },
-  detailsCard: {
+  progressWrapper: {
     flex: 1,
+    marginHorizontal: 16,
+    alignItems: "center",
+  },
+  progressText: {
+    color: "#a7f3d0",
+    fontSize: 10,
+    fontWeight: "700",
+    textTransform: "uppercase",
+    marginTop: 4,
+    letterSpacing: 0.5,
+    opacity: 0.8,
+  },
+  content: {
+    flex: 1,
+    paddingHorizontal: 20,
+    paddingBottom: 24,
+  },
+  placeholderCard: {
+    flex: 1,
+    backgroundColor: "#0d5c56",
+    borderRadius: 24,
+    padding: 24,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#0d5c56",
-    borderRadius: 32,
-    padding: 30,
-    marginVertical: 40,
     borderWidth: 1,
-    borderColor: `${colors.primaryLight}20`,
-    shadowColor: "#000000",
-    shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.25,
-    shadowRadius: 16,
-    elevation: 8,
+    borderColor: "rgba(255, 255, 255, 0.05)",
   },
-  subtitle: {
-    color: "#2dd4bf",
-    fontSize: 14,
+  placeholderType: {
+    color: colors.warning,
+    fontSize: 12,
     fontWeight: "800",
     textTransform: "uppercase",
     letterSpacing: 1.5,
     marginBottom: 8,
   },
-  title: {
+  placeholderTitle: {
     color: "#ffffff",
-    fontSize: 26,
+    fontSize: 22,
     fontWeight: "900",
     textAlign: "center",
-    marginBottom: 16,
+    marginBottom: 12,
   },
-  description: {
+  placeholderDesc: {
     color: "#a7f3d0",
     fontSize: 14,
     lineHeight: 22,
     fontWeight: "500",
     textAlign: "center",
     opacity: 0.85,
-    maxWidth: 280,
+    maxWidth: 260,
+    marginBottom: 32,
   },
-  actionsContainer: {
+  simulateBtn: {
+    backgroundColor: colors.primaryLight,
+    height: 52,
+    borderRadius: 26,
     width: "100%",
-  },
-  primaryButton: {
-    flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    height: 56,
-    borderRadius: 28,
     shadowColor: "#000000",
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.2,
     shadowRadius: 6,
     elevation: 4,
-    marginBottom: 16,
   },
-  primaryButtonText: {
+  simulateBtnText: {
     color: "#ffffff",
-    fontSize: 16,
-    fontWeight: "800",
-  },
-  secondaryButton: {
-    alignItems: "center",
-    justifyContent: "center",
-    height: 56,
-    borderRadius: 28,
-    backgroundColor: "transparent",
-    borderWidth: 2,
-    borderColor: `${colors.primaryLight}30`,
-  },
-  secondaryButtonText: {
-    color: "#2dd4bf",
-    fontSize: 16,
+    fontSize: 15,
     fontWeight: "800",
   },
 });
