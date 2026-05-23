@@ -1,0 +1,94 @@
+{
+  "chapters": [
+    {
+      "id": "C01",
+      "number": 1,
+      "stage": 1,
+      "title": "Greetings",
+      "subtitle": "Your first handshake with Pakistani Urdu",
+      "estimatedMinutes": 14,
+      "contentFile": "chapters/chapter_01.json"
+    },
+    {
+      "id": "C02",
+      "number": 2,
+      "stage": 1,
+      "title": "Introducing Yourself",
+      "subtitle": "State your name, kahan se hain, and wedding meetings",
+      "estimatedMinutes": 14,
+      "contentFile": "chapters/chapter_02.json"
+    },
+    {
+      "id": "C03",
+      "number": 3,
+      "stage": 1,
+      "title": "Pronouns & \"To Be\"",
+      "subtitle": "Foundation pronouns and the respectful ji haan register",
+      "estimatedMinutes": 14,
+      "contentFile": "chapters/chapter_03.json"
+    },
+    {
+      "id": "C04",
+      "number": 4,
+      "stage": 1,
+      "title": "Family (Core)",
+      "subtitle": "Immediate family, mera vs meri, and showing respect to elders",
+      "estimatedMinutes": 14,
+      "contentFile": "chapters/chapter_04.json"
+    },
+    {
+      "id": "C05",
+      "number": 5,
+      "stage": 1,
+      "title": "Family (Extended)",
+      "subtitle": "Distinctive maternal vs paternal family terms at a Pakistani wedding",
+      "estimatedMinutes": 14,
+      "contentFile": "chapters/chapter_05.json"
+    },
+    {
+      "id": "C06",
+      "number": 6,
+      "stage": 1,
+      "title": "Numbers 1–20",
+      "subtitle": "Counting items and learning the irregular teen numbers honestly",
+      "estimatedMinutes": 14,
+      "contentFile": "chapters/chapter_06.json"
+    },
+    {
+      "id": "C07",
+      "number": 7,
+      "stage": 1,
+      "title": "Colors",
+      "subtitle": "Invariant vs inflecting colors and describing a vibrant bazaar",
+      "estimatedMinutes": 14,
+      "contentFile": "chapters/chapter_07.json"
+    },
+    {
+      "id": "C08",
+      "number": 8,
+      "stage": 1,
+      "title": "Common Objects",
+      "subtitle": "Identifying household objects, tea, and description builders",
+      "estimatedMinutes": 14,
+      "contentFile": "chapters/chapter_08.json"
+    },
+    {
+      "id": "C09",
+      "number": 9,
+      "stage": 1,
+      "title": "Register Practice (Aap / Tum / Tu)",
+      "subtitle": "Choosing the correct level of respect across different relationships",
+      "estimatedMinutes": 14,
+      "contentFile": "chapters/chapter_09.json"
+    },
+    {
+      "id": "C10",
+      "number": 10,
+      "stage": 1,
+      "title": "Capstone: Meeting the In-Laws",
+      "subtitle": "High stakes conversation roleplay at their Karachi home",
+      "estimatedMinutes": 16,
+      "contentFile": "chapters/chapter_10.json"
+    }
+  ]
+}

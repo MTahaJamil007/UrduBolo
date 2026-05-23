@@ -19,6 +19,7 @@
     "zustand": "^5.0.13"
   },
   "devDependencies": {
+    "@types/node": "^25.9.1",
     "@types/react": "~19.2.2",
     "tailwindcss": "^4.3.0",
     "typescript": "~6.0.3"
@@ -27,7 +28,9 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "validate-assets": "npx tsx scripts/validateAssets.ts",
+    "typecheck": "tsc --noEmit"
   },
   "private": true
 }

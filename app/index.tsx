@@ -1,7 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Text, View, StatusBar } from "react-native";
+import { loadChapter } from "../services/contentService";
 
 export default function HomePlaceholder() {
+  useEffect(() => {
+    async function testLoading() {
+      try {
+        console.log("--- Content Pipeline Verification ---");
+        const chapter = await loadChapter("C01");
+        if (chapter) {
+          console.log(`Successfully loaded Chapter ${chapter.number}: ${chapter.title}`);
+          console.log(`Goal: ${chapter.goal}`);
+          console.log(`Estimated Minutes: ${chapter.estimatedMinutes}`);
+          console.log(`Total Phrases: ${chapter.phrases.length}`);
+          console.log("Levels:");
+          chapter.levels.forEach((lvl) => {
+            console.log(`  - Level ${lvl.number} [${lvl.type}]: ${lvl.title} — ${lvl.subtitle}`);
+          });
+        } else {
+          console.error("Failed to load Chapter C01.");
+        }
+      } catch (error) {
+        console.error("Error loading chapter C01:", error);
+      }
+    }
+    testLoading();
+  }, []);
   return (
     <View className="flex-1 items-center justify-center bg-[#092e2b] px-6">
       <StatusBar barStyle="light-content" />
