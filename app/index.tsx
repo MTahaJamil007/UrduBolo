@@ -1,59 +1,97 @@
-import React, { useEffect } from "react";
-import { Text, View, StatusBar } from "react-native";
-import { loadChapter } from "../services/contentService";
+import React from "react";
+import { View, Text, SafeAreaView, StatusBar, StyleSheet } from "react-native";
+import { useProgressStore } from "../stores/useProgressStore";
+import { useUserStore } from "../stores/useUserStore";
+import StreakBadge from "../components/StreakBadge";
+import XPCounter from "../components/XPCounter";
+import PathView from "../components/PathView";
+import { colors } from "../constants/colors";
 
-export default function HomePlaceholder() {
-  useEffect(() => {
-    async function testLoading() {
-      try {
-        console.log("--- Content Pipeline Verification ---");
-        const chapter = await loadChapter("C01");
-        if (chapter) {
-          console.log(`Successfully loaded Chapter ${chapter.number}: ${chapter.title}`);
-          console.log(`Goal: ${chapter.goal}`);
-          console.log(`Estimated Minutes: ${chapter.estimatedMinutes}`);
-          console.log(`Total Phrases: ${chapter.phrases.length}`);
-          console.log("Levels:");
-          chapter.levels.forEach((lvl) => {
-            console.log(`  - Level ${lvl.number} [${lvl.type}]: ${lvl.title} — ${lvl.subtitle}`);
-          });
-        } else {
-          console.error("Failed to load Chapter C01.");
-        }
-      } catch (error) {
-        console.error("Error loading chapter C01:", error);
-      }
-    }
-    testLoading();
-  }, []);
+export default function HomeScreen() {
+  // Read state from Zustand stores
+  const userName = useUserStore((state) => state.name);
+  const totalXP = useProgressStore((state) => state.totalXP);
+  const streak = useProgressStore((state) => state.currentStreak);
+
+  // Fallback greeting if name is not set
+  const greeting = userName ? `Assalam alaikum, ${userName}!` : "Assalam alaikum!";
+
   return (
-    <View className="flex-1 items-center justify-center bg-[#092e2b] px-6">
-      <StatusBar barStyle="light-content" />
-      <View className="items-center">
-        {/* Decorative Urdu character block */}
-        <View className="w-20 h-20 bg-[#0f766e] rounded-3xl items-center justify-center border border-[#14b8a6]/20 shadow-2xl mb-6">
-          <Text className="text-white text-4xl font-semibold">ب</Text>
+    <SafeAreaView style={styles.safeArea}>
+      <StatusBar barStyle="light-content" backgroundColor={colors.background} />
+      
+      {/* 1. Sticky Header - Branding & Stats */}
+      <View style={styles.header}>
+        <Text style={styles.logo}>Bolo</Text>
+        <View style={styles.statsContainer}>
+          <StreakBadge count={streak} />
+          <View style={{ width: 10 }} />
+          <XPCounter amount={totalXP} />
         </View>
+      </View>
 
-        <Text className="text-white text-5xl font-extrabold tracking-wider text-center">
-          Bolo
-        </Text>
-        
-        <Text className="text-[#2dd4bf] text-2xl font-bold tracking-wide text-center mt-2">
-          Pakistani Urdu
-        </Text>
-
-        {/* Decorative divider */}
-        <View className="h-[2px] w-16 bg-[#d97706] rounded-full mt-6 mb-6" />
-
-        <Text className="text-[#a7f3d0] text-base font-medium text-center max-w-[280px] opacity-90 leading-6">
-          Speak your heritage. One level at a time.
-        </Text>
-        
-        <Text className="text-[#5eead4] text-xs font-semibold uppercase tracking-widest text-center mt-12 bg-[#0f766e]/30 px-4 py-2 rounded-full border border-[#0f766e]/40">
-          Sprint 0 — Setup Complete
+      {/* 2. Personalization greeting banner */}
+      <View style={styles.greetingBanner}>
+        <Text style={styles.greetingText}>{greeting}</Text>
+        <Text style={styles.subGreetingText}>
+          Let's practice your Urdu speaking skills today.
         </Text>
       </View>
-    </View>
+
+      {/* 3. The vertical Duolingo wavy path list */}
+      <View style={styles.pathContainer}>
+        <PathView />
+      </View>
+    </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: colors.background,
+  },
+  header: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingHorizontal: 20,
+    paddingVertical: 14,
+    backgroundColor: colors.background,
+    borderBottomWidth: 1,
+    borderBottomColor: `${colors.border}40`, // 25% opacity border
+  },
+  logo: {
+    color: "#ffffff",
+    fontSize: 28,
+    fontWeight: "900",
+    letterSpacing: 1.5,
+  },
+  statsContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  greetingBanner: {
+    backgroundColor: "#0d5c56",
+    paddingHorizontal: 20,
+    paddingVertical: 14,
+    borderBottomWidth: 1,
+    borderBottomColor: `${colors.primaryLight}30`,
+  },
+  greetingText: {
+    color: "#ffffff",
+    fontSize: 18,
+    fontWeight: "800",
+    letterSpacing: 0.2,
+  },
+  subGreetingText: {
+    color: "#a7f3d0",
+    fontSize: 12,
+    fontWeight: "500",
+    marginTop: 2,
+    opacity: 0.8,
+  },
+  pathContainer: {
+    flex: 1,
+  },
+});
