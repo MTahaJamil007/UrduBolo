@@ -1,4 +1,10 @@
-import Voice, { SpeechResultsEvent, SpeechErrorEvent } from "@react-native-voice/voice";
+/**
+ * Speech Recognition Service
+ * 
+ * Wraps @react-native-voice/voice with robust error handling.
+ * Falls back to mock/simulator mode if the native module is unavailable
+ * (e.g. emulators, older Android devices, or when the module fails to initialize).
+ */
 
 export class PermissionError extends Error {
   constructor(message = "Microphone permission denied") {
@@ -7,25 +13,37 @@ export class PermissionError extends Error {
   }
 }
 
-// Check if native Voice module is compiled and available at runtime
-const isNativeVoiceAvailable =
-  typeof Voice !== "undefined" &&
-  Voice !== null &&
-  typeof Voice.start === "function";
+// Safely load the native Voice module. It will be null if native binding fails.
+let Voice: any = null;
+let isNativeVoiceAvailable = false;
+
+try {
+  // Use require instead of static import to allow clean runtime try-catch fallback
+  Voice = require("@react-native-voice/voice").default;
+  isNativeVoiceAvailable =
+    typeof Voice !== "undefined" &&
+    Voice !== null &&
+    typeof Voice.start === "function";
+  console.log(`[SpeechService] Native Voice module successfully loaded. Status: ${isNativeVoiceAvailable}`);
+} catch (err) {
+  console.warn("[SpeechService] Failed to dynamically load native Voice module. Falling back to MOCK mode.", err);
+  Voice = null;
+  isNativeVoiceAvailable = false;
+}
 
 let isListening = false;
 let resolveSpeechPromise: ((transcript: string) => void) | null = null;
 let rejectSpeechPromise: ((error: Error) => void) | null = null;
 let speechTimeout: any = null;
 
-// Initialize native event listeners ONCE at module load to prevent memory leaks
-if (isNativeVoiceAvailable) {
+// Initialize native event listeners ONCE if Voice is available
+if (isNativeVoiceAvailable && Voice) {
   try {
     Voice.onSpeechStart = () => {
       console.log("[SpeechService] Native Speech started...");
     };
 
-    Voice.onSpeechResults = (e: SpeechResultsEvent) => {
+    Voice.onSpeechResults = (e: any) => {
       console.log("[SpeechService] Native Speech results returned:", e.value);
       if (e.value && e.value.length > 0 && resolveSpeechPromise) {
         clearSpeechTimeout();
@@ -34,7 +52,7 @@ if (isNativeVoiceAvailable) {
       }
     };
 
-    Voice.onSpeechError = (e: SpeechErrorEvent) => {
+    Voice.onSpeechError = (e: any) => {
       console.error("[SpeechService] Native Speech error code:", e.error);
       const errorMessage = e.error?.message || "Unknown voice error";
       
@@ -56,8 +74,6 @@ if (isNativeVoiceAvailable) {
   } catch (err) {
     console.error("[SpeechService] Failed to bind event listeners:", err);
   }
-} else {
-  console.log("[SpeechService] Native Voice module unavailable. Operating in SIMULATOR / MOCK mode.");
 }
 
 function clearSpeechTimeout() {
@@ -104,7 +120,7 @@ export async function startSpeechRecording(mockExpectedText = ""): Promise<strin
       cleanupSpeechPromises();
     }, 10000);
 
-    if (isNativeVoiceAvailable) {
+    if (isNativeVoiceAvailable && Voice) {
       // 1. Native microphone recording path
       try {
         await Voice.start("ur-PK"); // Bind Pakistani Urdu locale
@@ -122,7 +138,7 @@ export async function startSpeechRecording(mockExpectedText = ""): Promise<strin
       setTimeout(() => {
         if (resolveSpeechPromise) {
           clearSpeechTimeout();
-          // Simulate 85% correct input or exactly matching the roman phrase
+          // Simulate 100% correct input or exactly matching the roman phrase
           resolveSpeechPromise(mockExpectedText);
           cleanupSpeechPromises();
         }
@@ -143,7 +159,7 @@ export async function stopSpeechRecording(): Promise<string> {
 
   isListening = false;
 
-  if (isNativeVoiceAvailable) {
+  if (isNativeVoiceAvailable && Voice) {
     try {
       await Voice.stop();
       // Wait briefly for native speech results callback

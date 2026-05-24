@@ -1,5 +1,12 @@
 import { Audio } from "expo-av";
-import * as Speech from "expo-speech";
+
+// Safely load expo-speech - it can crash on some Android 9 devices
+let Speech: any = null;
+try {
+  Speech = require("expo-speech");
+} catch (err) {
+  console.warn("[AudioService] expo-speech failed to load:", err);
+}
 
 const AUDIO_ASSETS: Record<string, any> = {
   // Static maps will be resolved here as the user records files
@@ -14,12 +21,24 @@ let isPlayingTTS = false;
 export async function stopAllAudio(): Promise<void> {
   try {
     if (currentSound) {
-      await currentSound.stopAsync();
-      await currentSound.unloadAsync();
+      try {
+        await currentSound.stopAsync();
+      } catch (err) {
+        console.warn("[AudioService] Sound stopAsync failed:", err);
+      }
+      try {
+        await currentSound.unloadAsync();
+      } catch (err) {
+        console.warn("[AudioService] Sound unloadAsync failed:", err);
+      }
       currentSound = null;
     }
-    if (isPlayingTTS) {
-      await Speech.stop();
+    if (isPlayingTTS && Speech) {
+      try {
+        await Speech.stop();
+      } catch (err) {
+        console.warn("[AudioService] Speech stop failed:", err);
+      }
       isPlayingTTS = false;
     }
   } catch (error) {
@@ -30,11 +49,6 @@ export async function stopAllAudio(): Promise<void> {
 /**
  * Plays an audio asset. If the file is missing from the static bundling map,
  * it automatically falls back to Expo Speech text-to-speech with Urdu locale.
- *
- * @param assetPath Path of the audio asset (e.g. 'audio/C01/C01-001-normal.m4a')
- * @param textFallback Text to speak if local file is missing
- * @param speed Audio speed modifier ('normal' = 1.0, 'slow' = 0.75)
- * @param onDone Callback fired when audio finishes playing or errors out
  */
 export async function playAudio(
   assetPath: string,
@@ -60,7 +74,11 @@ export async function playAudio(
       
       sound.setOnPlaybackStatusUpdate(async (status) => {
         if (status.isLoaded && status.didJustFinish) {
-          await sound.unloadAsync();
+          try {
+            await sound.unloadAsync();
+          } catch (err) {
+            console.warn("[AudioService] sound.unloadAsync failed:", err);
+          }
           if (currentSound === sound) {
             currentSound = null;
           }
@@ -94,6 +112,12 @@ async function playTTS(
   speed: "normal" | "slow",
   onDone?: () => void
 ): Promise<void> {
+  if (!Speech) {
+    console.warn("[AudioService] TTS engine not loaded. Skipping text playback:", text);
+    if (onDone) onDone();
+    return;
+  }
+
   try {
     console.log(`[AudioService] [TTS Fallback] Speaking: "${text}" (${speed} speed)`);
     isPlayingTTS = true;
@@ -111,7 +135,7 @@ async function playTTS(
         isPlayingTTS = false;
         if (onDone) onDone();
       },
-      onError: (err) => {
+      onError: (err: any) => {
         console.error("[AudioService] TTS Error:", err);
         isPlayingTTS = false;
         if (onDone) onDone();
